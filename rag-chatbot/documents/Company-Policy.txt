@@ -1,0 +1,187 @@
+HR CARs — COMPANY POLICY DOCUMENT
+Internal Operations Manual | Version 2.1 | Effective: January 2025
+====================================================================
+
+COMPANY OVERVIEW
+----------------
+HR CARs is a licensed used car dealership registered in the Republic of Lithuania. Our business
+registration number is 305XXXXXX, and we operate under Lithuanian Law on Road Transport and
+relevant EU consumer protection directives. Our primary dealership is located in Vilnius, Lithuania.
+We are a small, customer-first team of up to 10 professionals committed to honest, transparent
+vehicle sales and after-sales support. This document outlines the internal rules and standards
+that all employees must follow in their day-to-day operations.
+
+1. WORKING HOURS AND ATTENDANCE
+---------------------------------
+1.1 Official dealership operating hours are Monday through Saturday, 09:00 to 18:00 (local time).
+    The dealership is closed on Sundays and Lithuanian public holidays unless management
+    announces otherwise in advance.
+
+1.2 All employees must arrive at the dealership premises no later than 08:45 — 15 minutes before
+    opening — to prepare the showroom, review new inventory updates, check emails, and ensure
+    the premises are clean and presentable for customers.
+
+1.3 Lunch breaks are 30 minutes and must be staggered among staff so that at least one salesperson
+    and one administrative/support staff member are present on the floor at all times during
+    business hours.
+
+1.4 Overtime must be pre-approved by management. Employees who work overtime on weekdays will be
+    compensated at 1.5x their hourly rate per Lithuanian Labour Code requirements. Saturday work
+    within normal shift hours is considered standard.
+
+1.5 Punctuality is essential. Three unexcused late arrivals within a single calendar month will
+    result in a formal written warning. Repeated violations may lead to disciplinary action up
+    to and including termination, following the procedures set out in the Lithuanian Labour Code.
+
+1.6 Employees who are unable to attend work must notify their direct manager no later than 08:00
+    on the day of absence. Medical certificates (nedarbingumo lapeliai) must be submitted within
+    3 working days of returning to work.
+
+2. DRESS CODE AND PERSONAL PRESENTATION
+-----------------------------------------
+2.1 All sales staff must wear the company-issued HR CARs polo shirt or jacket. Trousers must be
+    clean, dark-coloured, and professional. Trainers or casual footwear are not permitted on the
+    sales floor.
+
+2.2 Mechanic and inspection staff must wear the company-issued overalls and appropriate personal
+    protective equipment (PPE) at all times when working in the vehicle inspection area.
+
+2.3 Name badges must be worn visibly at all times during working hours.
+
+2.4 Personal hygiene standards must be maintained at a professional level at all times.
+
+3. CUSTOMER INTERACTION STANDARDS
+------------------------------------
+3.1 Every customer who enters the dealership must be greeted verbally within 2 minutes of arrival.
+    The greeting must be friendly, professional, and in the customer's preferred language
+    (Lithuanian, Russian, or English as applicable). Standard greeting: "Sveiki atvykę į HR CARs!
+    Kuo galiu jums padėti?" or the equivalent in Russian/English.
+
+3.2 Employees must never make a customer feel pressured or uncomfortable. High-pressure sales
+    tactics are strictly prohibited.
+
+3.3 All information provided to customers about vehicles — including mileage, technical condition,
+    accident history, and pricing — must be accurate and verifiable. Deliberately misleading a
+    customer is grounds for immediate dismissal and may expose the company to legal liability.
+
+3.4 Phone inquiries must be answered within 3 rings during business hours. If a staff member
+    cannot answer, calls must be returned within 2 hours. All missed calls must be logged in
+    the CRM system.
+
+3.5 Online inquiries (from autoplius.lt, autogidas.lt, or company email) must receive an initial
+    response within 1 business hour during working hours.
+
+3.6 Complaints must be taken seriously and escalated to the manager immediately if the employee
+    cannot resolve the issue independently. All complaints must be logged in the customer
+    service register.
+
+3.7 Staff must not discuss competitor dealerships negatively. Focus on HR CARs' value proposition:
+    inspected vehicles, warranty coverage, transparent pricing, and professional after-sales service.
+
+4. VEHICLE INSPECTION PROCEDURES
+-----------------------------------
+4.1 Every vehicle acquired for inventory must undergo a full pre-sale inspection within 48 hours
+    of arriving on the lot.
+
+4.2 The inspection must be performed by a qualified mechanic and must include the following:
+    a) Visual exterior inspection — body condition, paintwork, glass, lights, tyres, alloys
+    b) Visual interior inspection — upholstery, dashboard, electronics, air conditioning
+    c) Under-bonnet inspection — engine, fluids, belts, battery
+    d) Undercarriage inspection — chassis, suspension, exhaust, brake lines
+    e) Road test — minimum 10 km, testing acceleration, braking, steering, gearbox, clutch
+    f) OBD-II diagnostics scan — all fault codes must be logged and addressed
+    g) Vehicle history check via CarVertical or equivalent — to verify mileage, accidents,
+       ownership history, and outstanding finance
+    h) Document verification — registration certificate (техпаспорт / techninis pasas),
+       roadworthiness certificate (technine apžiūra), and any available service records
+
+4.3 All inspection findings must be recorded in the Vehicle Inspection Report (VIR) form and
+    stored digitally in the company's management system. A printed copy must be placed in the
+    vehicle's folder.
+
+4.4 Any defects found during inspection must be categorised:
+    - Category A (Minor): cosmetic issues that do not affect safety or driveability (e.g., small
+      scratches, worn interior trim). These may be listed on the vehicle's condition sheet and
+      reflected in the pricing.
+    - Category B (Significant): mechanical or safety-relevant issues that must be repaired before
+      the vehicle can be listed for sale (e.g., brake pad wear below 3mm, tyre tread below legal
+      limit, fault codes relating to safety systems).
+    - Category C (Major): structural or very costly issues that require management approval before
+      proceeding. Management will decide whether to repair, auction, or reject the vehicle.
+
+4.5 No vehicle may be listed for sale or shown to customers until the inspection is complete and
+    all Category B defects have been resolved.
+
+4.6 Vehicles must also have a valid Lithuanian roadworthiness test (techninė apžiūra) or one
+    must be arranged before sale if the existing one has less than 3 months remaining.
+
+5. PRICING AND NEGOTIATION POLICY
+------------------------------------
+5.1 All listing prices are set by management and entered into the CRM/inventory system. Prices
+    on autoplius.lt and other platforms must match the internal listing price at all times.
+
+5.2 Sales staff may offer a discount of up to 3% on the listed price without manager approval.
+    Discounts above 3% require written approval from the manager.
+
+5.3 Trade-in valuations must be conducted using current market data (autoplius.lt average,
+    eurotax, or carvertical estimate) and approved by the manager before being communicated
+    to the customer.
+
+6. RETURN AND WARRANTY POLICY
+--------------------------------
+6.1 HR CARs offers a 14-day return policy on all vehicles sold, in accordance with Lithuanian
+    consumer protection law. The vehicle must be returned in the same condition as sold, with
+    no additional mileage exceeding 500 km beyond the odometer reading at point of sale.
+
+6.2 All vehicles sold by HR CARs are covered by a 3-month mechanical warranty from the date
+    of sale. The warranty covers:
+    - Engine and gearbox mechanical failures not attributable to misuse or accident
+    - Electrical system faults not caused by external damage
+    - Cooling system failures
+
+6.3 The warranty does NOT cover:
+    - Consumable parts (brake pads, tyres, wiper blades, bulbs, filters)
+    - Damage resulting from accidents, misuse, or modification by the customer
+    - Faults disclosed and documented on the Vehicle Condition Sheet at time of sale
+
+6.4 Warranty claims must be submitted in writing (email or in person) within the 3-month period.
+    HR CARs will assess the claim within 5 business days and arrange repair at our partner
+    service centre if the claim is valid.
+
+6.5 Extended warranty options beyond 3 months may be offered via third-party providers and
+    presented to customers at the time of sale as optional add-ons.
+
+7. DATA PROTECTION AND CONFIDENTIALITY
+-----------------------------------------
+7.1 All customer personal data collected during the sales process is handled in accordance with
+    the EU General Data Protection Regulation (GDPR) and Lithuanian data protection laws.
+
+7.2 Employees must not share customer data with third parties without explicit consent.
+
+7.3 Internal pricing, supplier information, and margin data are strictly confidential and must
+    not be disclosed outside the company.
+
+8. HEALTH, SAFETY AND FACILITY RULES
+---------------------------------------
+8.1 The vehicle lot and showroom must be kept clean and tidy at all times. All employees share
+    responsibility for maintaining the premises.
+
+8.2 No smoking is permitted inside the showroom or within 5 metres of the entrance.
+
+8.3 Test drive vehicles must always have a company employee present in the vehicle.
+
+8.4 Vehicle keys must be stored in the designated key cabinet at all times when not in use.
+    Keys must never be left in unattended vehicles on the lot.
+
+8.5 Fire extinguishers are located at the showroom entrance and in the inspection bay. All
+    employees must know their locations. Emergency exits must remain unobstructed at all times.
+
+9. POLICY REVIEW
+------------------
+This policy document is reviewed annually by management. Employees will be notified of any
+changes in writing. By continuing employment at HR CARs, all staff acknowledge and agree to
+comply with the current version of this policy.
+
+For questions regarding this policy, contact the HR CARs management team directly.
+
+HR CARs Management | Vilnius, Lithuania | hrcars@example.lt | +370 600 00000

@@ -1,0 +1,234 @@
+HR CARs — MONTHLY FINANCIAL SUMMARY REPORT
+Period: January 2025 | Prepared: 2025-02-03 | Prepared by: HR CARs Management
+====================================================================
+
+EXECUTIVE SUMMARY
+------------------
+January 2025 was a solid opening month for HR CARs. Despite the traditionally slower post-New
+Year period for vehicle sales in Lithuania, the dealership achieved 7 vehicle sales against a
+target of 6. Vehicle acquisition activity was active with 5 new units purchased for inventory.
+Revenue exceeded the EUR 100,000 mark for the month. After all operating expenses, the dealership
+recorded a net profit of EUR 7,340, which is in line with our seasonal expectations for January.
+Detailed figures are presented below.
+
+====================================================================
+SECTION 1: VEHICLE ACQUISITIONS (JANUARY 2025)
+====================================================================
+Five vehicles were purchased for inventory during January 2025.
+
+  Unit  | Make/Model                        | Purchase Price | Source
+  ------|-----------------------------------|----------------|----------------------------
+  A-011 | Volkswagen Golf VII 1.6 TDI       | EUR 6,800      | Private seller, Kaunas
+  A-012 | Toyota Yaris 1.0 VVT-i (2018)    | EUR 7,200      | Auto auction, Germany
+  A-013 | Peugeot 308 1.2 PureTech (2020)  | EUR 10,800     | Private seller, Vilnius
+  A-014 | Kia Sportage 1.6 T-GDI (2021)    | EUR 19,500     | Auto auction, Belgium
+  A-015 | Honda Civic 1.0 VTEC (2019)      | EUR 9,800      | Private seller, Klaipėda
+
+  Total Vehicles Purchased:     5 units
+  Total Acquisition Cost:       EUR 54,100
+  Average Purchase Price:       EUR 10,820
+
+Additional acquisition costs (transport, CarVertical checks, pre-sale servicing):
+  Transport costs (Germany + Belgium shipments):   EUR 1,640
+  CarVertical reports (5 x EUR 20):                EUR 100
+  Pre-sale mechanical repairs and servicing:       EUR 2,180
+  Techninė apžiūra (3 vehicles required new TA):  EUR 105
+
+  Total Additional Acquisition Costs:  EUR 4,025
+  TOTAL COST OF GOODS ACQUIRED:        EUR 58,125
+
+====================================================================
+SECTION 2: VEHICLE SALES (JANUARY 2025)
+====================================================================
+Seven vehicles were sold during January 2025.
+
+  Unit  | Make/Model                          | Purchase Price | Sale Price  | Gross Margin
+  ------|-------------------------------------|----------------|-------------|-------------
+  S-001 | BMW 320d F30 2.0d (2015)           | EUR 8,400      | EUR 11,200  | EUR 2,800
+  S-002 | Skoda Superb 2.0 TDI (2017)        | EUR 10,200     | EUR 13,500  | EUR 3,300
+  S-003 | Ford Focus 1.5 EcoBoost (2017)     | EUR 7,500      | EUR 9,750   | EUR 2,250
+  S-004 | Audi A4 2.0 TDI S-Line (2017)      | EUR 14,200     | EUR 17,400  | EUR 3,200
+  S-005 | Volkswagen Passat 2.0 TDI (2016)   | EUR 8,900      | EUR 11,200  | EUR 2,300
+  S-006 | Mercedes-Benz C220d (2018)         | EUR 17,800     | EUR 21,500  | EUR 3,700
+  S-007 | Opel Astra K 1.4 Turbo (2017)      | EUR 6,100      | EUR 7,900   | EUR 1,800
+
+  Total Vehicles Sold:          7 units
+  Total Revenue (Sales):        EUR 92,450
+  Total COGS (purchase only):   EUR 73,100
+  Gross Profit (Sales):         EUR 19,350
+  Average Gross Margin/Unit:    EUR 2,764 (approximately 26.4% of purchase price)
+
+Note: S-003 (Ford Focus) included a pre-sale brake service costing EUR 320 (included in
+acquisition costs from December 2024 budget). S-004 (Audi A4) had a timing chain replacement
+costing EUR 780 (included in December 2024 acquisition costs). These costs are reflected in
+the overall margin analysis.
+
+====================================================================
+SECTION 3: REVENUE BREAKDOWN
+====================================================================
+
+  Revenue Item                              Amount (EUR)
+  ------------------------------------------|-------------
+  Vehicle sales (7 units)                  | EUR 92,450
+  Extended warranty sales (2 policies)     | EUR 580
+  Documentation/admin fees                 | EUR 210
+  ------------------------------------------|-------------
+  TOTAL GROSS REVENUE                      | EUR 93,240
+  ------------------------------------------|-------------
+
+====================================================================
+SECTION 4: OPERATING EXPENSES (JANUARY 2025)
+====================================================================
+
+4.1 COST OF GOODS SOLD (COGS)
+  Vehicle purchase costs (7 sold units):      EUR 73,100
+  Pre-sale repairs (allocated to sold units): EUR 1,850
+  Transport costs (allocated to sold units):  EUR 980
+  CarVertical (allocated to sold units):      EUR 140
+  TOTAL COGS:                                 EUR 76,070
+
+4.2 FIXED OPERATING EXPENSES
+
+  Expense Category                         | Monthly Amount (EUR)
+  ------------------------------------------|---------------------
+  Premises rent (lot + showroom, Vilnius)  | EUR 2,800
+  Utilities (electricity, heating, water)  | EUR 340
+  Internet & phone (business lines x2)     | EUR 85
+  CRM software subscription               | EUR 49
+  Accounting software (iSAF compatible)   | EUR 39
+  Office supplies and stationery          | EUR 65
+  ------------------------------------------|---------------------
+  SUBTOTAL — Fixed Costs                  | EUR 3,378
+
+4.3 SALARIES AND PERSONNEL COSTS
+
+  Role                          | Gross Salary (EUR) | Employer SOD* (EUR) | Total Cost (EUR)
+  ------------------------------|--------------------|--------------------|------------------
+  Sales Manager / Owner         | EUR 2,200          | EUR 704             | EUR 2,904
+  Sales Consultant (1 FT)       | EUR 1,400          | EUR 448             | EUR 1,848
+  Part-time Mechanic / Inspector| EUR 900 (part-time)| EUR 288             | EUR 1,188
+  Administrative Assistant      | EUR 1,100          | EUR 352             | EUR 1,452
+  ------------------------------|--------------------|--------------------|------------------
+  TOTAL PERSONNEL COSTS         | EUR 5,600          | EUR 1,792           | EUR 7,392
+
+  *SOD = Social contributions payable by employer in Lithuania (~32% of gross salary),
+   including State Social Insurance (SoDra) and compulsory health insurance contributions.
+
+4.4 VARIABLE / MARKETING EXPENSES
+
+  Expense Category                            | Amount (EUR)
+  ---------------------------------------------|-------------
+  autoplius.lt premium listings (15 vehicles) | EUR 210
+  Facebook / Instagram paid advertising       | EUR 180
+  Google Ads (brand + local search terms)     | EUR 120
+  Cleaning supplies (showroom + vehicles)     | EUR 75
+  Fuel (test drives + vehicle transport)      | EUR 140
+  Bank fees (transfers, POS terminal)         | EUR 45
+  Miscellaneous / contingency                 | EUR 60
+  ---------------------------------------------|-------------
+  SUBTOTAL — Variable Costs                   | EUR 830
+
+4.5 EXPENSE SUMMARY
+
+  Category                         | Amount (EUR)
+  ----------------------------------|-------------
+  Cost of Goods Sold (COGS)        | EUR 76,070
+  Fixed Operating Expenses         | EUR 3,378
+  Personnel Costs (incl. SOD)      | EUR 7,392
+  Variable / Marketing Expenses    | EUR 830
+  ----------------------------------|-------------
+  TOTAL EXPENSES                   | EUR 87,670
+  ----------------------------------|-------------
+
+====================================================================
+SECTION 5: PROFIT AND LOSS SUMMARY (JANUARY 2025)
+====================================================================
+
+  P&L Item                                    | Amount (EUR)
+  ---------------------------------------------|-------------
+  Total Gross Revenue                          | EUR 93,240
+  Cost of Goods Sold (COGS)                   | EUR 76,070
+                                               |
+  GROSS PROFIT                                 | EUR 17,170
+  Gross Profit Margin                          | 18.4%
+                                               |
+  Fixed Operating Expenses                     | EUR 3,378
+  Personnel Costs (incl. employer SOD)         | EUR 7,392
+  Variable / Marketing Expenses                | EUR 830
+  TOTAL OPERATING EXPENSES (excl. COGS)        | EUR 11,600
+                                               |
+  EBITDA (Operating Profit)                    | EUR 5,570
+                                               |
+  Depreciation (showroom equipment, tools)     | EUR 230
+  Interest on short-term credit line           | EUR 0
+                                               |
+  NET PROFIT BEFORE TAX                        | EUR 5,340
+                                               |
+  Corporate Income Tax (15% per LT law)*      | EUR 801
+  (Small company relief applied — rate 5%     |
+   on first EUR 300K profit per annum)         |
+  Effective tax (5% applied):                  | EUR 267
+                                               |
+  NET PROFIT AFTER TAX                         | EUR 5,073
+
+  *Note: Lithuanian companies with up to 10 employees and annual income below EUR 300,000
+   may qualify for the reduced 5% corporate income tax rate (pelno mokestis) per LT
+   Pelno mokesčio įstatymo 5 str. HR CARs qualifies under these conditions.
+
+====================================================================
+SECTION 6: CASH FLOW NOTE (JANUARY 2025)
+====================================================================
+
+Opening cash / bank balance (01 Jan 2025):    EUR 18,400
+  + Sales receipts received in January:       EUR 89,200   (3 sales via bank transfer still pending end-Jan)
+  - Vehicle purchases paid:                   EUR 54,100
+  - Transport, pre-sale costs:                EUR 4,025
+  - Operating expenses paid:                  EUR 11,600
+  - VAT remittance (PVM) Q4 2024:            EUR 0         (filed and paid December 2024)
+
+Closing cash / bank balance (31 Jan 2025):    EUR 37,875
+
+Note: EUR 3,250 in confirmed sales revenue received in first week of February 2025 relates
+to January sales completed on credit terms — this will appear in February cash flow.
+
+====================================================================
+SECTION 7: KEY PERFORMANCE INDICATORS (KPIs) — JANUARY 2025
+====================================================================
+
+  KPI                                | January 2025 | Target | Status
+  -------------------------------------|--------------|--------|--------
+  Units Sold                           | 7            | 6      | ABOVE TARGET
+  Gross Revenue                        | EUR 93,240   | EUR 85,000 | ABOVE TARGET
+  Average Sale Price per Unit          | EUR 13,207   | EUR 12,000 | ABOVE TARGET
+  Gross Margin %                       | 18.4%        | 20%    | SLIGHTLY BELOW
+  Net Profit After Tax                 | EUR 5,073    | EUR 5,000  | ON TARGET
+  Units in Stock (end of month)        | 15           | 12–18  | ON TARGET
+  Days in Stock (avg per sold unit)    | 38 days      | <45    | ON TARGET
+  Customer Complaints Received         | 1            | 0      | MONITOR
+  Warranty Claims Filed                | 0            | 0      | ON TARGET
+  Online Inquiries Received            | 47           | 40     | ABOVE TARGET
+  Test Drives Conducted                | 19           | 15     | ABOVE TARGET
+
+NOTE ON COMPLAINT: One customer complaint was received regarding a delay in the REGITRA
+re-registration process where paperwork was initially submitted with an error. The issue
+was resolved within 2 business days and the customer was satisfied with the resolution.
+No financial impact.
+
+====================================================================
+SECTION 8: OUTLOOK — FEBRUARY 2025
+====================================================================
+
+February is historically a slow month for car sales in Lithuania due to winter conditions
+and post-January budget tightening for consumers. However, HR CARs has:
+  - 2 reserved vehicles (deposit paid) expected to finalise in early February
+  - 3 strong leads from January online inquiries in active follow-up
+  - Planned purchase of 3–4 new inventory units from German auto auction
+  - Facebook advertising campaign planned for Valentine's Day (EUR 200 budget)
+
+February target: 5 units sold | Revenue target: EUR 70,000 | Net profit target: EUR 4,000
+
+====================================================================
+Report prepared by: HR CARs Management Team
+Reviewed by: Accounting Partner — UAB [Buhalterinės Paslaugos]
+Next report due: 2025-03-05 (covering February 2025)
+====================================================================
