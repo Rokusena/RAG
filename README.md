@@ -103,6 +103,11 @@ python api.py
 
 Server starts at `http://localhost:8000`. Interactive Swagger docs at `http://localhost:8000/docs`.
 
+If you open the root page (`http://localhost:8000/`), the chat UI now includes Lithuanian voice mode:
+- Click the 🎤 button and speak in Lithuanian (`lt-LT`) to send a question.
+- Assistant replies are read aloud using browser text-to-speech (Lithuanian voice when available).
+- Make sure microphone permission is allowed in your browser.
+
 **Request:**
 ```http
 POST /ask

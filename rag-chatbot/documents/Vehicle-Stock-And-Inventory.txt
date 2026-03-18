@@ -1,0 +1,76 @@
+Vehicle Stock and Inventory
+===========================
+
+1. Overview
+AutoGroup Motors maintains a rotating inventory of quality pre-owned vehicles sourced from Western Europe, the United States, and Japan. Our current stock includes sedans, SUVs, hatchbacks, wagons, and light commercial vehicles. All vehicles listed below have passed our 150-point inspection and come with a minimum 12-month warranty.
+
+Stock is updated regularly. For the most current availability and pricing, visit www.autogroupmotors.lt/inventory or contact our sales team at sales@autogroupmotors.lt or +370 5 123 4567.
+
+2. Current Vehicle Stock
+
+a. Sedans
+
+- 2022 BMW 320d M Sport — Mileage: 42,000 km, Colour: Mineral Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,900
+- 2021 Mercedes-Benz C200 AMG Line — Mileage: 38,000 km, Colour: Obsidian Black, Fuel: Petrol, Transmission: Automatic, Price: EUR 31,500
+- 2023 Audi A4 40 TFSI S Line — Mileage: 19,000 km, Colour: Glacier White, Fuel: Petrol, Transmission: Automatic, Price: EUR 33,200
+- 2020 Volkswagen Passat 2.0 TDI Business — Mileage: 67,000 km, Colour: Reflex Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 19,800
+- 2021 Toyota Camry 2.5 Hybrid Executive — Mileage: 51,000 km, Colour: Platinum White Pearl, Fuel: Hybrid, Transmission: CVT, Price: EUR 26,400
+- 2019 Volvo S60 T5 Inscription — Mileage: 58,000 km, Colour: Denim Blue, Fuel: Petrol, Transmission: Automatic, Price: EUR 24,500
+- 2022 Škoda Superb 2.0 TDI Style — Mileage: 35,000 km, Colour: Magnetic Brown, Fuel: Diesel, Transmission: DSG, Price: EUR 25,900
+
+b. SUVs and Crossovers
+
+- 2023 Volvo XC60 B5 Momentum — Mileage: 15,000 km, Colour: Crystal White, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 42,500
+- 2022 BMW X3 xDrive20d M Sport — Mileage: 31,000 km, Colour: Phytonic Blue, Fuel: Diesel, Transmission: Automatic, Price: EUR 39,900
+- 2021 Mercedes-Benz GLC 220d 4MATIC — Mileage: 44,000 km, Colour: Selenite Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 37,800
+- 2022 Toyota RAV4 2.5 Hybrid Style — Mileage: 28,000 km, Colour: Emotional Red, Fuel: Hybrid, Transmission: CVT, Price: EUR 34,200
+- 2020 Volkswagen Tiguan 2.0 TDI 4MOTION R-Line — Mileage: 55,000 km, Colour: Pure White, Fuel: Diesel, Transmission: DSG, Price: EUR 27,500
+- 2023 Hyundai Tucson 1.6 T-GDI HEV Premium — Mileage: 12,000 km, Colour: Amazon Grey, Fuel: Hybrid, Transmission: Automatic, Price: EUR 33,900
+- 2021 Mazda CX-5 2.5 Skyactiv-G Revolution — Mileage: 40,000 km, Colour: Machine Grey, Fuel: Petrol, Transmission: Automatic, Price: EUR 28,700
+- 2019 Land Rover Discovery Sport 2.0 TD4 SE — Mileage: 72,000 km, Colour: Corris Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 26,900
+
+c. Hatchbacks and Compact Cars
+
+- 2022 Volkswagen Golf 8 2.0 TDI Style — Mileage: 29,000 km, Colour: Atlantic Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 23,800
+- 2023 BMW 118i M Sport — Mileage: 11,000 km, Colour: Melbourne Red, Fuel: Petrol, Transmission: Automatic, Price: EUR 27,500
+- 2021 Audi A3 Sportback 35 TFSI S Line — Mileage: 36,000 km, Colour: Navarra Blue, Fuel: Petrol, Transmission: S tronic, Price: EUR 25,200
+- 2022 Mazda 3 2.0 Skyactiv-X Revolution — Mileage: 22,000 km, Colour: Soul Red Crystal, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 24,600
+- 2020 Toyota Corolla 1.8 Hybrid Comfort — Mileage: 48,000 km, Colour: Celestite Grey, Fuel: Hybrid, Transmission: CVT, Price: EUR 19,200
+
+d. Wagons and Estates
+
+- 2022 Volvo V60 B4 Momentum — Mileage: 33,000 km, Colour: Thunder Grey, Fuel: Mild Hybrid Diesel, Transmission: Automatic, Price: EUR 32,800
+- 2021 BMW 320d Touring M Sport — Mileage: 47,000 km, Colour: Black Sapphire, Fuel: Diesel, Transmission: Automatic, Price: EUR 30,500
+- 2022 Škoda Octavia Combi 2.0 TDI Style — Mileage: 25,000 km, Colour: Lava Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 24,900
+- 2020 Mercedes-Benz C220d Estate AMG Line — Mileage: 61,000 km, Colour: Iridium Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,200
+
+e. Electric and Plug-In Hybrid Vehicles
+
+- 2023 Tesla Model 3 Long Range — Mileage: 8,000 km, Colour: Pearl White, Range: 602 km (WLTP), Transmission: Single-speed, Price: EUR 39,900
+- 2022 Volkswagen ID.4 Pro Performance — Mileage: 18,000 km, Colour: Moonstone Grey, Range: 520 km (WLTP), Transmission: Single-speed, Price: EUR 34,500
+- 2023 BMW iX1 xDrive30 — Mileage: 9,000 km, Colour: Storm Bay, Range: 440 km (WLTP), Transmission: Single-speed, Price: EUR 44,200
+- 2022 Volvo XC40 Recharge Pure Electric — Mileage: 21,000 km, Colour: Sage Green, Range: 425 km (WLTP), Transmission: Single-speed, Price: EUR 37,800
+- 2021 Mercedes-Benz EQA 250 — Mileage: 30,000 km, Colour: Digital White, Range: 426 km (WLTP), Transmission: Single-speed, Price: EUR 33,500
+
+f. Light Commercial Vehicles
+
+- 2021 Volkswagen Transporter T6.1 2.0 TDI — Mileage: 62,000 km, Colour: Reflex Silver, Fuel: Diesel, Payload: 1,050 kg, Price: EUR 27,900
+- 2022 Ford Transit Custom 2.0 EcoBlue Limited — Mileage: 38,000 km, Colour: Frozen White, Fuel: Diesel, Payload: 1,100 kg, Price: EUR 29,500
+- 2020 Mercedes-Benz Vito 116 CDI — Mileage: 71,000 km, Colour: Cavansite Blue, Fuel: Diesel, Payload: 1,045 kg, Price: EUR 25,800
+
+3. Vehicle Condition Grades
+Each vehicle in our stock is assigned a condition grade:
+
+- Grade A (Excellent): Near-new condition, no visible wear, under 20,000 km
+- Grade B (Very Good): Minor cosmetic wear, well-maintained, under 50,000 km
+- Grade C (Good): Normal wear consistent with age and mileage, fully serviced
+- Grade D (Fair): May require minor cosmetic attention, priced accordingly
+
+4. Reservation Policy
+Customers may reserve any vehicle in stock for up to 72 hours with a refundable deposit of EUR 500. Reservations can be made online, by phone, or in person. If the purchase is not completed within the reservation period, the deposit is refunded in full.
+
+5. Trade-In
+We accept trade-ins against any vehicle in stock. Trade-in valuations are provided free of charge and are valid for 7 days. See our Trade-In and Vehicle Appraisal Guide for details.
+
+6. Contact
+For stock inquiries and test drive bookings, contact sales@autogroupmotors.lt or call +370 5 123 4567. Visit our showroom at Gedimino pr. 45, Vilnius, Monday to Friday 9:00–18:00 and Saturday 9:00–15:00.

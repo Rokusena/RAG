@@ -1,0 +1,42 @@
+Vehicle Import and Registration Process
+=========================================
+
+1. Overview
+AutoGroup Motors specializes in importing quality pre-owned vehicles from Western Europe, the United States, and Japan. This document explains our import process, the steps involved in registering an imported vehicle in Lithuania, and how we handle all documentation on behalf of our customers.
+
+2. Sourcing and Inspection
+All vehicles are sourced from verified auctions, authorized dealers, and trusted private sellers in Germany, the Netherlands, Belgium, France, the USA, and Japan. Before purchasing any vehicle for import, our team conducts a thorough remote inspection using high-resolution photographs, detailed condition reports, and vehicle history checks through services such as Carfax (USA), AutoDNA, and national registration databases.
+
+Upon arrival in Lithuania, every vehicle undergoes a comprehensive 150-point inspection at our facility. This inspection covers the engine, transmission, suspension, brakes, electrical systems, body condition, paint thickness measurement, interior condition, and tire health. Vehicles that do not meet our quality standards are either repaired to standard or rejected.
+
+3. Customs and Import Duties
+Vehicles imported from outside the European Union are subject to customs duties and VAT. The current rates are:
+- Customs duty: 6.5% of the vehicle's declared customs value (CIF — cost, insurance, freight)
+- VAT: 21% applied on the sum of the customs value and the customs duty
+- Registration tax: Lithuania does not currently impose a separate vehicle registration tax, but this may change based on EU directives
+
+For vehicles imported from EU member states, no customs duty applies. VAT treatment depends on whether the vehicle is classified as new (less than 6 months old or under 6,000 km) or used. New vehicles require Lithuanian VAT payment; used vehicles purchased from VAT-registered dealers with VAT included do not require additional VAT payment in Lithuania.
+
+4. Technical Inspection (Techninė apžiūra)
+All imported vehicles must pass a Lithuanian technical inspection before they can be registered. The inspection is performed at authorized Regitra or partner inspection stations. We schedule and accompany vehicles to inspection, ensuring all necessary preparations are made in advance. Common preparation steps include adjusting headlight beam patterns for right-hand traffic (for UK or Japan imports), ensuring emissions compliance, and verifying that all safety equipment (warning triangle, first aid kit, fire extinguisher, reflective vest) is present.
+
+5. Registration with Regitra
+Vehicle registration is handled through Regitra, the Lithuanian state enterprise responsible for vehicle registration. The following documents are required:
+- Original vehicle title or registration certificate from the country of origin
+- Customs declaration (SAD document) for non-EU imports
+- Proof of VAT payment or VAT exemption documentation
+- Valid technical inspection certificate
+- Proof of vehicle insurance (TPVCA — compulsory third-party liability insurance)
+- Owner's identification document
+- Power of attorney if the registration is handled by a third party
+
+AutoGroup Motors handles the entire registration process for customers who purchase vehicles from us. The registration fee is included in the vehicle price. For customers importing their own vehicles, we offer a full registration assistance service for a flat fee of EUR 150.
+
+6. Timeline
+The typical timeline from vehicle purchase abroad to full registration in Lithuania is:
+- EU imports: 5 to 10 business days
+- USA imports (shipping from East Coast): 4 to 6 weeks
+- Japan imports (shipping via RoRo or container): 6 to 8 weeks
+
+7. Contact
+For import-related questions, contact imports@autogroupmotors.lt or call +370 5 123 4569.

@@ -17,18 +17,22 @@ from sentence_transformers import SentenceTransformer
 
 from query import (
     CHROMA_DB_DIR,
-    COLLECTION_NAME,
+    COLLECTION_CUSTOMER,
+    COLLECTION_EMPLOYEE,
     EMBEDDING_MODEL,
-    SYSTEM_PROMPT,
-    TOP_K,
-    ask_llm,
-    retrieve_chunks,
+    answer_question,
 )
 
 # --- Request / Response models ---
 
+class HistoryEntry(BaseModel):
+    question: str
+    answer: str
+
 class AskRequest(BaseModel):
     question: str
+    mode: str = "customer"
+    history: list[HistoryEntry] = []
 
 class AskResponse(BaseModel):
     answer: str
@@ -51,17 +55,18 @@ async def lifespan(app: FastAPI):
 
     client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
     try:
-        collection = client.get_collection(name=COLLECTION_NAME)
+        customer_col = client.get_collection(name=COLLECTION_CUSTOMER)
+        employee_col = client.get_collection(name=COLLECTION_EMPLOYEE)
     except Exception:
         raise RuntimeError(
-            "Collection not found. Run 'python ingest.py' first."
+            "Collections not found. Run 'python ingest.py' first."
         )
 
     model = SentenceTransformer(EMBEDDING_MODEL)
 
-    _state["collection"] = collection
+    _state["collections"] = {"customer": customer_col, "employee": employee_col}
     _state["model"] = model
-    print(f"RAG API ready — collection has {collection.count()} chunks")
+    print(f"RAG API ready — customer: {customer_col.count()} chunks, employee: {employee_col.count()} chunks")
     yield
     _state.clear()
 
@@ -91,21 +96,20 @@ async def ask(request: AskRequest):
     if not question:
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
 
-    collection = _state["collection"]
+    collections = _state["collections"]
     model = _state["model"]
+    mode = request.mode if request.mode in ("customer", "employee") else "customer"
 
-    # Retrieve relevant chunks
-    context, sources = retrieve_chunks(question, collection, model)
+    # Convert history to dicts for query module
+    history = [entry.model_dump() for entry in request.history]
 
-    # Build prompt and call Ollama
-    prompt = SYSTEM_PROMPT.format(context=context, question=question)
-    answer = ask_llm(prompt)
+    result = answer_question(question, collections, model, mode=mode, history=history)
 
-    # Surface Ollama errors as 503
-    if answer.startswith("Error:"):
-        raise HTTPException(status_code=503, detail=answer)
+    # Surface LLM errors as 503
+    if result["answer"].startswith("Error:"):
+        raise HTTPException(status_code=503, detail=result["answer"])
 
-    return AskResponse(answer=answer, sources=sources)
+    return AskResponse(answer=result["answer"], sources=result["sources"])
 
 
 @app.get("/")

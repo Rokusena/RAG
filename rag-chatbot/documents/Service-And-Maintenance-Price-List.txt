@@ -1,0 +1,70 @@
+Service and Maintenance Price List
+=====================================
+
+Effective Date: January 2026
+Location: AutoGroup Motors Service Center, Gedimino pr. 45, Vilnius
+
+1. Routine Maintenance Services
+
+Oil and Filter Change:
+- Conventional oil: EUR 49 (includes up to 5L of oil and oil filter)
+- Synthetic oil: EUR 79 (includes up to 5L of full synthetic oil and oil filter)
+- Diesel vehicles: EUR 89 (includes up to 6L of diesel-grade oil and oil filter)
+
+Brake Service:
+- Front brake pad replacement: EUR 89 to EUR 149 (depending on vehicle make)
+- Rear brake pad replacement: EUR 79 to EUR 139
+- Brake disc replacement (per axle): EUR 159 to EUR 249
+- Brake fluid flush: EUR 49
+
+Tire Services:
+- Seasonal tire swap (4 tires, on rims): EUR 29
+- Seasonal tire swap (4 tires, off rims, includes balancing): EUR 49
+- Wheel alignment (2-axle): EUR 39
+- Tire rotation and balancing: EUR 25
+- New tire installation (per tire, includes balancing): EUR 15
+
+2. Major Service Packages
+
+Small Service (recommended every 15,000 km or 12 months):
+Includes oil and filter change, tire inspection, brake inspection, fluid level check, battery test, and multi-point visual inspection.
+Price: EUR 99 (petrol) / EUR 119 (diesel)
+
+Full Service (recommended every 30,000 km or 24 months):
+Includes everything in Small Service plus air filter replacement, cabin filter replacement, spark plug inspection or replacement, coolant level and condition check, transmission fluid check, drive belt inspection, and comprehensive diagnostic scan.
+Price: EUR 199 (petrol) / EUR 239 (diesel)
+
+Major Service (recommended every 60,000 km or 48 months):
+Includes everything in Full Service plus timing belt or chain inspection, coolant system flush and replacement, transmission fluid replacement, power steering fluid replacement, and suspension component inspection.
+Price: EUR 349 to EUR 599 (varies significantly by vehicle model and engine type)
+
+3. Diagnostic Services
+
+OBD-II Diagnostic Scan: EUR 29 (fee waived if repair is performed at our service center)
+Advanced Diagnostic (including electrical system, ABS, airbag modules): EUR 59
+Pre-Purchase Inspection (comprehensive 150-point check for buyers): EUR 89
+Emissions Test Preparation and Check: EUR 39
+
+4. Air Conditioning Services
+AC System Recharge (R134a): EUR 59
+AC System Recharge (R1234yf): EUR 99
+AC Leak Detection and Repair: from EUR 79
+Cabin Filter Replacement: EUR 25 to EUR 45
+
+5. Electrical and Battery Services
+Battery Testing: Free
+Battery Replacement (including installation): EUR 89 to EUR 179 (depending on battery type)
+Alternator Replacement: from EUR 199
+Starter Motor Replacement: from EUR 179
+
+6. Body and Cosmetic Services
+Paint Touch-Up (minor scratches): from EUR 49
+Headlight Restoration (both headlights): EUR 39
+Interior Deep Cleaning: EUR 99
+Full Exterior Polish and Wax: EUR 79
+Ceramic Coating Application: from EUR 299
+
+7. Additional Information
+All prices include VAT at 21%. Parts pricing may vary depending on vehicle make, model, and year. OEM and quality aftermarket parts are used for all repairs. Customers receive a detailed written estimate before any work begins. All service work carries a 6-month or 10,000 km warranty on parts and labor.
+
+Appointments can be booked online at www.autogroupmotors.lt/service, by calling +370 5 123 4567, or by emailing service@autogroupmotors.lt. Walk-ins are accepted subject to availability.
