@@ -11,6 +11,7 @@ import chromadb
 from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
+from pypdf import PdfReader
 
 # Load environment variables from .env
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
@@ -32,19 +33,31 @@ CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
 
 
 def load_documents(documents_dir: str) -> list[dict]:
-    """Read all .txt and .md files from the documents directory."""
+    """Read all .txt, .md, and .pdf files from the documents directory."""
     documents = []
     if not os.path.exists(documents_dir):
         print(f"Error: Documents directory '{documents_dir}' does not exist.")
         sys.exit(1)
 
     for filename in sorted(os.listdir(documents_dir)):
+        filepath = os.path.join(documents_dir, filename)
+        content = ""
+
         if filename.endswith((".txt", ".md")):
-            filepath = os.path.join(documents_dir, filename)
             with open(filepath, "r", encoding="utf-8") as f:
                 content = f.read()
-            if content.strip():
-                documents.append({"filename": filename, "content": content})
+        elif filename.endswith(".pdf"):
+            try:
+                reader = PdfReader(filepath)
+                content = "\n\n".join(
+                    page.extract_text() or "" for page in reader.pages
+                )
+            except Exception as e:
+                print(f"Warning: Could not read PDF '{filename}': {e}")
+                continue
+
+        if content.strip():
+            documents.append({"filename": filename, "content": content})
 
     return documents
 
