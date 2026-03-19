@@ -2,7 +2,7 @@
 query.py — Terminal-based RAG chatbot.
 
 Embeds user questions, retrieves relevant chunks from ChromaDB,
-and generates answers using Ollama (llama3.2).
+and generates answers using Ollama (qwen3.5:9B with /no_think mode).
 """
 
 import os
@@ -21,31 +21,31 @@ COLLECTION_CUSTOMER = "customer_documents"
 COLLECTION_EMPLOYEE = "employee_documents"
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:9B")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "ollama")  # "ollama" or "openai"
 TOP_K = int(os.getenv("TOP_K", "5"))
 
-CUSTOMER_SYSTEM_PROMPT = """You are a helpful customer assistant for AutoGroup Motors (branded as HR CARs), a car resale dealership located at Gedimino pr. 45, Vilnius, Lithuania.
+CUSTOMER_SYSTEM_PROMPT = """Role: Customer-facing assistant for AutoGroup Motors (brand name: HR CARs), Gedimino pr. 45, Vilnius, Lithuania.
 
-Rules:
-1. Answer based on the provided context. Use reasoning — if the context describes a service (e.g. delivery options, financing), you can confirm that the dealership offers it.
-2. If the context genuinely contains no relevant information, say "I don't have enough information to answer that."
-3. Always answer in the same language as the user's question. You MUST support Lithuanian (lietuvių kalba) — if the user writes in Lithuanian, respond fully in Lithuanian.
-4. Be concise and helpful. Provide specific details (prices, timelines, contacts) when available in the context.
-5. When the user refers to previous messages in the conversation, use the conversation history to understand what they mean.
-6. You are speaking to a customer. Do NOT reveal any internal employee information such as salaries, benefits, or internal policies."""
+Instructions:
+- Answer ONLY from the provided context. Extract specific details: prices, timelines, contacts, conditions.
+- If the context contains no relevant information, reply exactly: "I don't have enough information to answer that."
+- Match the user's language. If the user writes in Lithuanian, reply entirely in Lithuanian.
+- Keep answers concise — 2-4 sentences unless the user asks for detail.
+- Use conversation history to resolve references like "that car", "the previous one", etc.
+- NEVER disclose employee-only information (salaries, benefits, internal policies). You are speaking to a customer."""
 
-EMPLOYEE_SYSTEM_PROMPT = """You are an internal assistant for AutoGroup Motors (branded as HR CARs) employees, located at Gedimino pr. 45, Vilnius, Lithuania.
+EMPLOYEE_SYSTEM_PROMPT = """Role: Internal assistant for AutoGroup Motors (brand name: HR CARs) employees, Gedimino pr. 45, Vilnius, Lithuania.
 
-Rules:
-1. Answer based on the provided context. Use reasoning — if the context describes a policy, benefit, or procedure, you can confirm it.
-2. If the context genuinely contains no relevant information, say "I don't have enough information to answer that."
-3. Always answer in the same language as the user's question. You MUST support Lithuanian (lietuvių kalba) — if the user writes in Lithuanian, respond fully in Lithuanian.
-4. Be concise and helpful. Provide specific details (salary bands, benefit amounts, policy details) when available in the context.
-5. When the user refers to previous messages in the conversation, use the conversation history to understand what they mean.
-6. You are speaking to an employee. You have access to all company documents including confidential HR information."""
+Instructions:
+- Answer ONLY from the provided context. Extract specific details: salary bands, benefit amounts, policy conditions, procedures.
+- If the context contains no relevant information, reply exactly: "I don't have enough information to answer that."
+- Match the user's language. If the user writes in Lithuanian, reply entirely in Lithuanian.
+- Keep answers concise — 2-4 sentences unless the user asks for detail.
+- Use conversation history to resolve references like "that policy", "the previous question", etc.
+- You have full access to all company documents including confidential HR information. You are speaking to an employee."""
 
 
 # --- FAQ: instant answers for common questions ---
@@ -228,7 +228,8 @@ def answer_question(
             messages.append({"role": "assistant", "content": entry["answer"]})
 
     # Current question with retrieved context
-    user_msg = f"Context:\n{context}\n\nQuestion: {question}"
+    # /no_think disables qwen3's chain-of-thought — faster for RAG where the answer is in the chunks
+    user_msg = f"/no_think\n\nContext:\n{context}\n\nQuestion: {question}"
     messages.append({"role": "user", "content": user_msg})
 
     answer = ask_llm(messages)
