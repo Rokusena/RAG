@@ -165,6 +165,7 @@ def ask_ollama(messages: list[dict]) -> str:
                 "model": OLLAMA_MODEL,
                 "messages": messages,
                 "stream": False,
+                "keep_alive": "30m",
             },
             timeout=120,
         )
