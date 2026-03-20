@@ -34,7 +34,7 @@ Rules:
 2. Copy exact numbers, prices, dates, percentages, and names from the context — never round, approximate, or paraphrase numerical data.
 3. If the context has no relevant information, reply exactly: "I don't have enough information to answer that."
 4. Reply in the same language the user writes in.
-5. Be concise: 2-4 sentences. Include all relevant specifics (EUR amounts, timelines, contact info).
+5. Answer concisely but always include every specific number, price, percentage, and condition found in the context. Do not omit details to save space.
 6. Use conversation history to resolve references like "that car" or "the previous one".
 7. NEVER reveal employee-only information (salaries, benefits, internal policies)."""
 
@@ -45,7 +45,7 @@ Rules:
 2. Copy exact numbers, prices, dates, percentages, salary bands, and benefit amounts from the context — never round, approximate, or paraphrase numerical data.
 3. If the context has no relevant information, reply exactly: "I don't have enough information to answer that."
 4. Reply in the same language the user writes in.
-5. Be concise: 2-4 sentences. Include all relevant specifics (EUR amounts, percentages, conditions).
+5. Answer concisely but always include every specific number, price, percentage, and condition found in the context. Do not omit details to save space.
 6. Use conversation history to resolve references like "that policy" or "the previous question".
 7. You have full access to all company documents including confidential HR information."""
 
@@ -101,8 +101,8 @@ EMPLOYEE_FAQ = [
         "sources": ["Employee-Compensation-And-Pay-Structure.txt"],
     },
     {
-        "patterns": ["overtime", "overtime pay", "overtime policy"],
-        "answer": "Overtime must be pre-approved by your manager. Rates: Weekday overtime 1.5x, Saturday 1.5x, Sunday/holidays 2.0x. Max 8 hours/week and 180 hours/year per Lithuanian labour law.",
+        "patterns": ["overtime", "overtime pay", "overtime policy", "overtime rate", "overtime hours"],
+        "answer": "Overtime must be pre-approved by your manager. Rates: weekday overtime 1.5x hourly rate, Saturday 1.5x, Sunday and public holidays 2.0x. Maximum 8 hours overtime per week and 180 hours per calendar year per Lithuanian labour law.",
         "sources": ["Employee-Compensation-And-Pay-Structure.txt"],
     },
 ]
@@ -165,8 +165,9 @@ def ask_ollama(messages: list[dict]) -> str:
                 "model": OLLAMA_MODEL,
                 "messages": messages,
                 "stream": False,
+                "options": {"num_predict": 512},
             },
-            timeout=120,
+            timeout=180,
         )
         response.raise_for_status()
         return response.json()["message"]["content"]
