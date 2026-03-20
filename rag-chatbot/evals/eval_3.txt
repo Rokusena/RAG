@@ -1,0 +1,335 @@
+======================================================================
+  RAG Chatbot Evaluation #3
+  Date: 2026-03-20 19:07
+  Model: qwen3.5:9B
+  Questions: 20
+======================================================================
+
+----------------------------------------------------------------------
+  Q1/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the return policy for vehicles bought online?
+
+  Expected answer:
+    Distance/online purchases have a 14-day cooling-off period from delivery date. The vehicle must not be driven more than 300 km beyond delivery odometer, must be in original condition, and all documentation/keys/accessories returned. Refunds are processed within 14 business days after inspection.
+
+  Actual answer:
+    For in-person purchases, we offer a voluntary 3-day satisfaction guarantee. For distance/online purchases, you have a 14-day cooling-off period. The vehicle must have less than 300 km added, be in original condition, and all documentation/keys returned. Refunds are processed within 14 business days. Contact: complaints@autogroupmotors.lt or +370 5 123 4573.
+
+  Sources expected: ['Returns-Refunds-And-Dispute-Resolution.txt']
+  Sources actual:   ['Returns-Refunds-And-Dispute-Resolution.txt']
+
+----------------------------------------------------------------------
+  Q2/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What are the extended warranty plans and their prices?
+
+  Expected answer:
+    Bronze Plan: powertrain only, 12 months or 20,000 km, EUR 299. Silver Plan: powertrain plus electrical, AC, steering, 18 months or 30,000 km, EUR 549. Gold Plan: bumper-to-bumper (excludes wear items), 24 months or 40,000 km, EUR 899. All plans include 24/7 roadside assistance within Lithuania and Baltics.
+
+  Actual answer:
+    Every pre-owned vehicle comes with a minimum 3-month / 5,000 km powertrain warranty. We also offer extended plans: Bronze (12 months, EUR 299), Silver (18 months, EUR 549), and Gold (24 months, EUR 899). New vehicles carry the full manufacturer warranty. Contact: service@autogroupmotors.lt or +370 5 123 4567.
+
+  Sources expected: ['Warranty-And-After-Sales-Policy.txt']
+  Sources actual:   ['Warranty-And-After-Sales-Policy.txt']
+
+----------------------------------------------------------------------
+  Q3/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How can I book a test drive and what do I need?
+
+  Expected answer:
+    Book online at www.autogroupmotors.lt/test-drive, by phone at +370 5 123 4567, or walk in. Available Mon-Fri 9:00-17:00 and Sat 9:00-14:00. Each slot is 30 minutes (15-20 min driving). You need a valid driving license (Category B) and a valid ID. Must be 18+ and not impaired.
+
+  Actual answer:
+    You can book a test drive online at www.autogroupmotors.lt/test-drive, by calling +370 5 123 4567, or walk in. You need a valid driving license and ID. Each slot is 30 minutes (15-20 min driving). Available Mon-Fri 9:00-17:00 and Sat 9:00-14:00. Insurance excess is EUR 500 in case of negligence.
+
+  Sources expected: ['Test-Drive-Policy-And-Procedure.txt']
+  Sources actual:   ['Test-Drive-Policy-And-Procedure.txt']
+
+----------------------------------------------------------------------
+  Q4/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What auto loan interest rates do you offer?
+
+  Expected answer:
+    Consumer auto loan rates start from 4.9% APR with strong credit, through partner banks SEB, Swedbank, Luminor, and Šiaulių Bankas. Loan terms 12-84 months, minimum 10% down payment. Pre-approval within 2 business hours. First-Time Buyer Program (ages 18-25) at 6.5% APR for vehicles up to EUR 15,000 with 20% down or co-signer.
+
+  Actual answer:
+    We partner with SEB, Swedbank, Luminor, and Šiaulių Bankas. Auto loan rates start from 4.9% APR, terms 12-84 months, down payment as low as 10%. Pre-approval within 2 business hours. We also offer business leasing (24-60 months) and a First-Time Buyer Program (6.5% APR, ages 18-25). Contact: finance@autogroupmotors.lt or +370 5 123 4568.
+
+  Sources expected: ['Financing-And-Leasing-Options.txt']
+  Sources actual:   ['Financing-And-Leasing-Options.txt']
+
+----------------------------------------------------------------------
+  Q5/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does a synthetic oil change cost?
+
+  Expected answer:
+    Synthetic oil change costs EUR 79. Includes up to 5-6 liters of oil and oil filter. Prices include 21% VAT. Conventional oil is EUR 49 and diesel vehicles EUR 89.
+
+  Actual answer:
+    Oil change prices: Conventional oil EUR 49, Synthetic oil EUR 79, Diesel vehicles EUR 89. All include up to 5-6L of oil and oil filter. Prices include 21% VAT. Book at service@autogroupmotors.lt or +370 5 123 4567.
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Service-And-Maintenance-Price-List.txt']
+
+----------------------------------------------------------------------
+  Q6/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What SUVs do you currently have in stock and at what prices?
+
+  Expected answer:
+    Current SUV stock includes: Volvo XC60 EUR 42,500, BMW X3 EUR 39,900, Mercedes-Benz GLC EUR 37,800, Toyota RAV4 EUR 34,200, Hyundai Tucson EUR 33,900, Volkswagen Tiguan EUR 27,500, Mazda CX-5 EUR 28,700, Land Rover Discovery Sport EUR 26,900.
+
+  Actual answer:
+    
+
+  Sources expected: ['Vehicle-Stock-And-Inventory.txt']
+  Sources actual:   ['Vehicle-Comparison-And-Buyers-Guide.txt', 'Vehicle-Stock-And-Inventory.txt']
+
+----------------------------------------------------------------------
+  Q7/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What do I get for referring a friend?
+
+  Expected answer:
+    When you refer a new customer who completes a purchase, you receive EUR 200 service credit or EUR 150 cash. The referred customer gets EUR 100 service credit. There is no limit on referrals. Rewards are processed within 14 business days.
+
+  Actual answer:
+    
+
+  Sources expected: ['Customer-Loyalty-And-Referral-Program.txt']
+  Sources actual:   ['Customer-Loyalty-And-Referral-Program.txt', 'Employee-Handbook-And-Code-Of-Conduct.txt']
+
+----------------------------------------------------------------------
+  Q8/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What electric vehicles do you sell and what is their range?
+
+  Expected answer:
+    Tesla Model 3 Long Range EUR 39,900 (602 km range), Volkswagen ID.4 EUR 34,500 (520 km range), BMW iX1 EUR 44,200 (440 km range), Volvo XC40 Recharge EUR 37,800, Mercedes EQA 250 EUR 33,500.
+
+  Actual answer:
+    
+
+  Sources expected: ['Vehicle-Stock-And-Inventory.txt']
+  Sources actual:   ['Vehicle-Comparison-And-Buyers-Guide.txt', 'Vehicle-Stock-And-Inventory.txt']
+
+----------------------------------------------------------------------
+  Q9/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does delivery to Kaunas cost and how long does it take?
+
+  Expected answer:
+    Delivery to Kaunas costs EUR 79 and takes 1-2 business days. Delivery fee is waived for purchases over EUR 20,000. Local delivery within Vilnius area (up to 30 km) is complimentary.
+
+  Actual answer:
+    
+
+  Sources expected: ['Vehicle-Delivery-And-Shipping-Options.txt']
+  Sources actual:   ['Vehicle-Delivery-And-Shipping-Options.txt']
+
+----------------------------------------------------------------------
+  Q10/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What KASKO insurance options are available and how much do they cost?
+
+  Expected answer:
+    KASKO (comprehensive) insurance costs 2-6% of insured vehicle value annually (e.g., EUR 300-EUR 900 for a EUR 15,000 vehicle). Partners include ERGO, Gjensidige, BTA, and Compensa Vienna Insurance Group. Gjensidige offers 10% discount for dashcams or ADAS systems. BTA offers Mini-KASKO covering theft and total loss at reduced rates. Complimentary claims assistance for first 12 months.
+
+  Actual answer:
+    
+
+  Sources expected: ['Insurance-Options-And-Partners.txt']
+  Sources actual:   ['Insurance-Options-And-Partners.txt', 'Financing-And-Leasing-Options.txt']
+
+----------------------------------------------------------------------
+  Q11/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How long is a trade-in offer valid for?
+
+  Expected answer:
+    Trade-in offers are valid for 7 calendar days or 500 km driven (whichever comes first). The in-person appraisal inspection takes 20-30 minutes. Popular brands like VW, Toyota, BMW, Audi tend to hold value better. SUVs/crossovers command a premium.
+
+  Actual answer:
+    
+
+  Sources expected: ['Trade-In-And-Vehicle-Appraisal-Guide.txt']
+  Sources actual:   ['Vehicle-Stock-And-Inventory.txt', 'Trade-In-And-Vehicle-Appraisal-Guide.txt', 'Financing-And-Leasing-Options.txt']
+
+----------------------------------------------------------------------
+  Q12/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does a pre-purchase vehicle inspection cost?
+
+  Expected answer:
+    A pre-purchase inspection costs EUR 89. OBD-II diagnostic scan is EUR 29 (waived if repair is done). Advanced diagnostics cost EUR 59. All prices include 21% VAT.
+
+  Actual answer:
+    
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Service-And-Maintenance-Price-List.txt', 'Vehicle-Import-And-Registration-Process.txt', 'Trade-In-And-Vehicle-Appraisal-Guide.txt', 'Warranty-And-After-Sales-Policy.txt']
+
+----------------------------------------------------------------------
+  Q13/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How long does it take to import and register a car from the USA?
+
+  Expected answer:
+    Importing from the USA takes 4-6 weeks for registration. Non-EU customs duty is 6.5% on customs value (CIF), plus 21% VAT. A 150-point inspection is performed upon arrival. Registration assistance fee is EUR 150 (included for customer purchases). Required documents include original title, customs declaration (SAD), VAT proof, technical inspection certificate, insurance, and ID.
+
+  Actual answer:
+    
+
+  Sources expected: ['Vehicle-Import-And-Registration-Process.txt']
+  Sources actual:   ['Vehicle-Import-And-Registration-Process.txt', 'Vehicle-Delivery-And-Shipping-Options.txt']
+
+----------------------------------------------------------------------
+  Q14/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does front brake pad replacement cost?
+
+  Expected answer:
+    Front brake pad replacement costs EUR 89-EUR 149 depending on the vehicle. Rear brake pads cost EUR 79-EUR 139. Brake disc replacement is EUR 159-EUR 249. Brake fluid flush is EUR 49. All prices include 21% VAT. Service work carries a 6-month or 10,000 km warranty on parts and labor.
+
+  Actual answer:
+    
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Returns-Refunds-And-Dispute-Resolution.txt', 'Service-And-Maintenance-Price-List.txt', 'Warranty-And-After-Sales-Policy.txt']
+
+----------------------------------------------------------------------
+  Q15/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What happens if I discover a defect after buying a vehicle?
+
+  Expected answer:
+    If a defect is discovered within 6 months that existed at time of sale, the burden of proof lies with AutoGroup Motors to show it wasn't pre-existing. Options include free repair, replacement vehicle, partial refund, or full refund. Inspection is scheduled within 5 business days. Disputes can be escalated to internal review (5 business days), Lithuanian Consumer Rights Authority, EU ODR platform, or court.
+
+  Actual answer:
+    
+
+  Sources expected: ['Returns-Refunds-And-Dispute-Resolution.txt']
+  Sources actual:   ['Test-Drive-Policy-And-Procedure.txt', 'Returns-Refunds-And-Dispute-Resolution.txt']
+
+----------------------------------------------------------------------
+  Q16/20 [FAQ] (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the salary range for a sales consultant and how does commission work?
+
+  Expected answer:
+    Sales Consultant base salary is EUR 1,600-2,200 gross per month. Commission is 1.5% of vehicle gross profit at target margin and 0.75% below target. Add-on commission is 5%. Monthly volume bonus of EUR 200 for every 5 vehicles sold beyond the 8-vehicle monthly target. Annual bonus up to 1.5 months' salary if targets exceeded.
+
+  Actual answer:
+    Salary bands vary by role. Examples: General Manager EUR 4,500-6,000/mo, Sales Consultant EUR 1,600-2,200/mo + commission, Senior Mechanic EUR 1,800-2,400/mo, Accountant EUR 1,800-2,400/mo. Sales commission: 1.5% of vehicle gross profit at target margin. Annual bonus: up to 1.5 months' salary. Salary reviews happen in March. Contact: hr@autogroupmotors.lt.
+
+  Sources expected: ['Employee-Compensation-And-Pay-Structure.txt']
+  Sources actual:   ['Employee-Compensation-And-Pay-Structure.txt']
+
+----------------------------------------------------------------------
+  Q17/20 (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What does the private health insurance cover?
+
+  Expected answer:
+    Private insurance through Compensa Vienna covers: outpatient care EUR 2,000/year, dental EUR 500/year, inpatient EUR 15,000/year, medications 80% reimbursement up to EUR 400/year, mental health 12 sessions/year fully covered, optical EUR 150/year. Family members can be added for EUR 45/person/month. Eligible after probation period for full-time employees.
+
+  Actual answer:
+    I don't have enough information to answer that.
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt']
+  Sources actual:   ['Insurance-Options-And-Partners.txt', 'Employee-Health-And-Benefits-Package.txt']
+
+----------------------------------------------------------------------
+  Q18/20 (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How many annual leave days do employees get?
+
+  Expected answer:
+    Standard annual leave is 20 working days for full-time employees. Employees with 5+ years get 25 days, and 10+ years get 28 days. Maximum 5 days can be carried over to the next year. Sick leave is 80% of salary for the first 2 days (paid by employer), then 62.06% from SODRA.
+
+  Actual answer:
+    
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt']
+  Sources actual:   ['Employee-Handbook-And-Code-Of-Conduct.txt', 'Employee-Health-And-Benefits-Package.txt']
+
+----------------------------------------------------------------------
+  Q19/20 [FAQ] (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the overtime policy and pay rates?
+
+  Expected answer:
+    Overtime must be pre-approved by your manager. Rates: weekday overtime 1.5x hourly rate, Saturday 1.5x, Sunday and public holidays 2.0x. Maximum 8 hours overtime per week and 180 hours per calendar year per Lithuanian labour law.
+
+  Actual answer:
+    Salary bands vary by role. Examples: General Manager EUR 4,500-6,000/mo, Sales Consultant EUR 1,600-2,200/mo + commission, Senior Mechanic EUR 1,800-2,400/mo, Accountant EUR 1,800-2,400/mo. Sales commission: 1.5% of vehicle gross profit at target margin. Annual bonus: up to 1.5 months' salary. Salary reviews happen in March. Contact: hr@autogroupmotors.lt.
+
+  Sources expected: ['Employee-Compensation-And-Pay-Structure.txt']
+  Sources actual:   ['Employee-Compensation-And-Pay-Structure.txt']
+
+----------------------------------------------------------------------
+  Q20/20 (EMPLOYEE) | Retrieval: 50%
+----------------------------------------------------------------------
+
+  Question:
+    What employee discounts and benefits are available for vehicle purchases?
+
+  Expected answer:
+    Employees get a 3% discount off listed vehicle price (once per year) per the Health and Benefits package. The Employee Handbook also mentions a 10% vehicle purchase discount. Additional benefits include EUR 100/month fuel allowance (if approved), EUR 500/year professional development budget, and EUR 50/month voluntary pension match through SEB bank.
+
+  Actual answer:
+    
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt', 'Employee-Handbook-And-Code-Of-Conduct.txt']
+  Sources actual:   ['Customer-Loyalty-And-Referral-Program.txt', 'Warranty-And-After-Sales-Policy.txt', 'Employee-Health-And-Benefits-Package.txt']
+
+======================================================================
+  RESULTS SUMMARY
+======================================================================
+  Total questions:         20
+  Avg retrieval precision: 97.5%
+  Perfect retrieval:       19/20
+  FAQ instant answers:     7/20
+======================================================================
