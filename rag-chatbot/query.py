@@ -96,13 +96,13 @@ CUSTOMER_FAQ = [
 
 EMPLOYEE_FAQ = [
     {
-        "patterns": ["salary", "pay", "how much do i earn", "compensation", "salary bands"],
-        "answer": "Salary bands vary by role. Examples: General Manager EUR 4,500-6,000/mo, Sales Consultant EUR 1,600-2,200/mo + commission, Senior Mechanic EUR 1,800-2,400/mo, Accountant EUR 1,800-2,400/mo. Sales commission: 1.5% of vehicle gross profit at target margin. Annual bonus: up to 1.5 months' salary. Salary reviews happen in March. Contact: hr@autogroupmotors.lt.",
+        "patterns": ["overtime", "overtime pay", "overtime policy", "overtime rate", "overtime hours"],
+        "answer": "Overtime must be pre-approved by your manager. Rates: weekday overtime 1.5x hourly rate, Saturday 1.5x, Sunday and public holidays 2.0x. Maximum 8 hours overtime per week and 180 hours per calendar year per Lithuanian labour law.",
         "sources": ["Employee-Compensation-And-Pay-Structure.txt"],
     },
     {
-        "patterns": ["overtime", "overtime pay", "overtime policy"],
-        "answer": "Overtime must be pre-approved by your manager. Rates: Weekday overtime 1.5x, Saturday 1.5x, Sunday/holidays 2.0x. Max 8 hours/week and 180 hours/year per Lithuanian labour law.",
+        "patterns": ["salary", "how much do i earn", "compensation", "salary bands", "pay structure", "pay scale"],
+        "answer": "Salary bands vary by role. Examples: General Manager EUR 4,500-6,000/mo, Sales Consultant EUR 1,600-2,200/mo + commission, Senior Mechanic EUR 1,800-2,400/mo, Accountant EUR 1,800-2,400/mo. Sales commission: 1.5% of vehicle gross profit at target margin. Annual bonus: up to 1.5 months' salary. Salary reviews happen in March. Contact: hr@autogroupmotors.lt.",
         "sources": ["Employee-Compensation-And-Pay-Structure.txt"],
     },
 ]

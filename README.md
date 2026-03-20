@@ -31,7 +31,7 @@ Your documents → Chunking → Embeddings → ChromaDB
 | LLM | Ollama (`qwen3.5:9B`) — runs fully locally, `/no_think` mode for fast RAG |
 | API | FastAPI |
 | Frontend | Single-page HTML chat UI |
-| Evaluation | Custom eval script with retrieval + similarity scoring |
+| Evaluation | Custom eval script — 20 questions, expected vs actual comparison, retrieval precision |
 
 ---
 
@@ -42,7 +42,7 @@ Your documents → Chunking → Embeddings → ChromaDB
 - **FAQ instant answers** — Common questions are matched and answered immediately without LLM latency
 - **Conversation history** — Maintains context across follow-up questions (last 3 exchanges)
 - **Web chat UI** — Clean dark-themed interface served at `http://localhost:8000`
-- **Evaluation script** — 18 Q&A test cases measuring retrieval precision, answer similarity, and FAQ coverage
+- **Evaluation script** — 20 Q&A test cases measuring retrieval precision, FAQ coverage, with full expected vs actual answer reports
 - **Swappable LLM** — Toggle between Ollama (local) and OpenAI via `.env`
 
 ---
@@ -68,7 +68,8 @@ rag-chatbot/
 ├── ingest.py         # Reads documents, chunks, embeds, stores in ChromaDB
 ├── query.py          # Core RAG pipeline + FAQ matching + terminal chat
 ├── api.py            # FastAPI REST endpoint + web UI
-├── eval.py           # Evaluation script (retrieval precision + answer similarity)
+├── eval.py           # Evaluation script (20 questions, generates reports)
+├── evals/            # Auto-generated eval reports (eval_1.txt, eval_2.txt, ...)
 ├── index.html        # Chat web interface
 ├── .env              # Configuration (model, provider, chunking params)
 └── requirements.txt
@@ -159,29 +160,27 @@ Run the eval script to measure retrieval and answer quality:
 python eval.py
 ```
 
-It runs 18 test queries and reports:
+It runs 20 test queries (15 customer, 5 employee) and generates a full report in `evals/eval_<nr>.txt` with:
+- Each question's **expected answer** vs **actual answer** side-by-side
 - **Retrieval precision** — did the correct source documents get retrieved?
-- **Answer similarity** — cosine similarity between expected and actual answer embeddings
 - **FAQ hit rate** — how many questions were answered instantly via FAQ
-- **Overall grade** (A/B/C/D)
+
+Reports auto-increment (`eval_1.txt`, `eval_2.txt`, etc.) so you can track improvements across prompt/model changes.
+
+See [EVAL.md](EVAL.md) for detailed evaluation methodology and findings.
 
 ### Model Comparison Results
 
-I tested 4 models on the same 18-question eval set. An interesting pattern emerged — smarter models actually score lower on cosine similarity because they paraphrase and elaborate more instead of echoing the expected answer verbatim.
+I tested 4 models on the same eval set. An interesting pattern emerged — smarter models actually score lower on cosine similarity because they paraphrase and elaborate more instead of echoing the expected answer verbatim. This led me to drop cosine similarity as a metric and switch to human-graded evaluation.
 
-| Model | Intelligence | Avg Similarity | Overall Score |
-|-------|:-----------:|:--------------:|:-------------:|
-| Gemma 2 9B | ~20 | 0.68 | 0.84 (B) |
-| Qwen3 8B (default prompt) | ~25 | 0.61 | 0.80 (B) |
-| Qwen3 8B (optimized prompt) | ~25 | 0.73 | **0.86 (A)** |
-| Qwen3.5 9B | **31** | 0.53 | 0.77 (B) |
+| Model | Intelligence | Avg Similarity | Notes |
+|-------|:-----------:|:--------------:|:------|
+| Gemma 2 9B | ~20 | 0.68 | Good at echoing, weak at reasoning |
+| Qwen3 8B (default prompt) | ~25 | 0.61 | Decent but inconsistent |
+| Qwen3 8B (optimized prompt) | ~25 | 0.73 | Prompt optimization > model size |
+| **Qwen3.5 9B** | **31** | 0.53 | Best real-world answers, worst similarity score |
 
-**Key takeaway:** Prompt optimization mattered more than model size — the optimized Qwen3 8B prompt scored highest overall. The smarter Qwen3.5 9B gives better real-world answers but scores lower because cosine similarity penalizes rephrasing.
-
-### Next Steps
-
-- Optimize the system prompt specifically for Qwen3.5 9B (currently using the Qwen3 prompt)
-- Replace cosine similarity with an LLM-as-judge eval (use an API model to grade answer correctness instead of embedding similarity) — this should better reflect actual answer quality and stop penalizing smarter models for paraphrasing
+**Key takeaway:** Cosine similarity is a flawed eval metric for RAG — smarter models paraphrase more, which lowers similarity scores despite giving better answers. Prompt optimization mattered more than model size. The final system uses Qwen3.5 9B with a prompt optimized for exact detail extraction.
 
 ---
 
@@ -228,7 +227,7 @@ The top matching chunks are passed as context to `qwen3.5:9B` running via Ollama
 - The impact of chunk size and overlap on retrieval quality
 - How vector embeddings capture semantic similarity (not just keyword matching)
 - Designing multi-collection access control (customer vs. employee)
-- Building an evaluation pipeline to measure RAG quality objectively
+- Building an evaluation pipeline to measure RAG quality — and why cosine similarity is a flawed metric (smarter models paraphrase more, scoring lower despite better answers)
 - FAQ pattern matching as a practical optimization to avoid unnecessary LLM calls
 - Prompt engineering matters more than model size — a well-tuned prompt on a smaller model beat a larger model with a generic prompt
-- Cosine similarity is a flawed eval metric for RAG — smarter models paraphrase more, which lowers similarity scores despite giving better answers. LLM-as-judge is the better approach
+- Debugging retrieval failures (chunking issues causing the wrong context to be returned) vs model failures (the LLM misinterpreting good context)
