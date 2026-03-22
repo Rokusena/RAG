@@ -1,35 +1,27 @@
 """
 ingest.py — Document ingestion pipeline for the RAG chatbot.
 
-Reads .txt and .md files from ./documents/, splits them into chunks,
+Reads .txt, .md, and .pdf files from ./documents/, splits them into chunks,
 generates embeddings with all-MiniLM-L6-v2, and stores everything in ChromaDB.
 """
 
 import os
 import sys
 import chromadb
-from dotenv import load_dotenv
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
 
-# Load environment variables from .env
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-
-# --- Configuration (reads from .env with sensible defaults) ---
-DOCUMENTS_DIR = os.path.join(os.path.dirname(__file__), "documents")
-CHROMA_DB_DIR = os.path.join(os.path.dirname(__file__), "chroma_db")
-COLLECTION_CUSTOMER = "customer_documents"
-COLLECTION_EMPLOYEE = "employee_documents"
-
-# Documents that contain sensitive employee information — excluded from customer collection
-EMPLOYEE_ONLY_FILES = {
-    "Employee-Compensation-And-Pay-Structure.txt",
-    "Employee-Health-And-Benefits-Package.txt",
-}
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
-CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "300"))
-CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
+from config import (
+    CHROMA_DB_DIR,
+    CHUNK_OVERLAP,
+    CHUNK_SIZE,
+    COLLECTION_CUSTOMER,
+    COLLECTION_EMPLOYEE,
+    DOCUMENTS_DIR,
+    EMBEDDING_MODEL,
+    EMPLOYEE_ONLY_FILES,
+)
 
 
 def load_documents(documents_dir: str) -> list[dict]:
@@ -119,7 +111,7 @@ def main():
     print(f"Reading documents from: {DOCUMENTS_DIR}")
     all_documents = load_documents(DOCUMENTS_DIR)
     if not all_documents:
-        print("No .txt or .md files found in the documents folder.")
+        print("No .txt, .md, or .pdf files found in the documents folder.")
         print("Add some files and try again.")
         sys.exit(1)
     print(f"Found {len(all_documents)} document(s): {[d['filename'] for d in all_documents]}")

@@ -15,9 +15,8 @@ from datetime import datetime
 # Add parent directory context
 sys.path.insert(0, os.path.dirname(__file__))
 
-from query import get_retriever, answer_question, _match_faq, OLLAMA_MODEL
-
-EVALS_DIR = os.path.join(os.path.dirname(__file__), "evals")
+from config import EVALS_DIR, LLM_PROVIDER, active_model_name
+from query import get_retriever, answer_question, _match_faq
 
 # --- Evaluation Dataset (20 questions) ---
 # Each entry: question, expected answer (key facts), expected source files, mode
@@ -174,9 +173,11 @@ def get_next_eval_number() -> int:
 
 def main():
     eval_nr = get_next_eval_number()
+    model_name = active_model_name()
 
     print("=" * 70)
     print(f"  RAG Chatbot Evaluation #{eval_nr}")
+    print(f"  Model: {model_name} ({LLM_PROVIDER})")
     print("=" * 70)
 
     print("\nLoading models and collections...")
@@ -246,7 +247,7 @@ def main():
         f.write(f"{'=' * 70}\n")
         f.write(f"  RAG Chatbot Evaluation #{eval_nr}\n")
         f.write(f"  Date: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
-        f.write(f"  Model: {OLLAMA_MODEL}\n")
+        f.write(f"  Model: {model_name} ({LLM_PROVIDER})\n")
         f.write(f"  Questions: {total}\n")
         f.write(f"{'=' * 70}\n\n")
 

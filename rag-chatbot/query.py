@@ -2,52 +2,32 @@
 query.py — Terminal-based RAG chatbot.
 
 Embeds user questions, retrieves relevant chunks from ChromaDB,
-and generates answers using Ollama (qwen3.5:9B with /no_think mode).
+and generates answers using the configured LLM provider (Ollama or OpenAI).
 """
 
 import os
 import sys
 import chromadb
 import requests
-from dotenv import load_dotenv
+from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 
-# Load environment variables from .env
-load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-
-# --- Configuration (reads from .env with sensible defaults) ---
-CHROMA_DB_DIR = os.path.join(os.path.dirname(__file__), "chroma_db")
-COLLECTION_CUSTOMER = "customer_documents"
-COLLECTION_EMPLOYEE = "employee_documents"
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/chat")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3.5:9B")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "ollama")  # "ollama" or "openai"
-TOP_K = int(os.getenv("TOP_K", "5"))
-
-CUSTOMER_SYSTEM_PROMPT = """You are the customer-facing assistant for AutoGroup Motors (brand name: HR CARs), Gedimino pr. 45, Vilnius, Lithuania.
-
-Rules:
-1. Answer ONLY using the provided context. Do NOT add information from outside the context.
-2. Copy exact numbers, prices, dates, percentages, and names from the context — never round, approximate, or paraphrase numerical data.
-3. If the context has no relevant information, reply exactly: "I don't have enough information to answer that."
-4. Reply in the same language the user writes in.
-5. Be concise: 2-4 sentences. Include all relevant specifics (EUR amounts, timelines, contact info).
-6. Use conversation history to resolve references like "that car" or "the previous one".
-7. NEVER reveal employee-only information (salaries, benefits, internal policies)."""
-
-EMPLOYEE_SYSTEM_PROMPT = """You are the internal assistant for AutoGroup Motors (brand name: HR CARs) employees, Gedimino pr. 45, Vilnius, Lithuania.
-
-Rules:
-1. Answer ONLY using the provided context. Do NOT add information from outside the context.
-2. Copy exact numbers, prices, dates, percentages, salary bands, and benefit amounts from the context — never round, approximate, or paraphrase numerical data.
-3. If the context has no relevant information, reply exactly: "I don't have enough information to answer that."
-4. Reply in the same language the user writes in.
-5. Be concise: 2-4 sentences. Include all relevant specifics (EUR amounts, percentages, conditions).
-6. Use conversation history to resolve references like "that policy" or "the previous question".
-7. You have full access to all company documents including confidential HR information."""
+from config import (
+    CHROMA_DB_DIR,
+    COLLECTION_CUSTOMER,
+    COLLECTION_EMPLOYEE,
+    EMBEDDING_MODEL,
+    LLM_PROVIDER,
+    OLLAMA_MODEL,
+    OLLAMA_URL,
+    OPENAI_API_KEY,
+    OPENAI_MODEL,
+    SYSTEM_PROMPT,
+    SYSTEM_PROMPT_OLLAMA_CUSTOMER,
+    SYSTEM_PROMPT_OLLAMA_EMPLOYEE,
+    TOP_K,
+    active_model_name,
+)
 
 
 # --- FAQ: instant answers for common questions ---
@@ -182,7 +162,6 @@ def ask_ollama(messages: list[dict]) -> str:
 def ask_openai(messages: list[dict]) -> str:
     """Send messages to OpenAI and return the generated response."""
     try:
-        from openai import OpenAI
         client = OpenAI(api_key=OPENAI_API_KEY)
         response = client.chat.completions.create(
             model=OPENAI_MODEL,
@@ -197,7 +176,7 @@ def ask_openai(messages: list[dict]) -> str:
 def ask_llm(messages: list[dict]) -> str:
     """Route messages to the configured LLM provider."""
     if LLM_PROVIDER == "openai":
-        if not OPENAI_API_KEY or OPENAI_API_KEY == "your-openai-api-key-here":
+        if not OPENAI_API_KEY:
             return "Error: OPENAI_API_KEY is not set in .env file."
         return ask_openai(messages)
     return ask_ollama(messages)
@@ -217,11 +196,15 @@ def answer_question(
         return {"answer": faq_match["answer"], "sources": faq_match["sources"]}
 
     collection = collections.get(mode, collections["customer"])
-    system_prompt = EMPLOYEE_SYSTEM_PROMPT if mode == "employee" else CUSTOMER_SYSTEM_PROMPT
-
     context, sources = retrieve_chunks(question, collection, model)
 
-    # Build chat messages with system prompt, history, and current question
+    # Select system prompt based on provider
+    if LLM_PROVIDER == "openai":
+        system_prompt = SYSTEM_PROMPT.replace("{mode}", mode)
+    else:
+        system_prompt = SYSTEM_PROMPT_OLLAMA_EMPLOYEE if mode == "employee" else SYSTEM_PROMPT_OLLAMA_CUSTOMER
+
+    # Build chat messages — context goes in user message, not system message
     messages = [{"role": "system", "content": system_prompt}]
 
     # Add conversation history (last 3 exchanges)
@@ -230,9 +213,11 @@ def answer_question(
             messages.append({"role": "user", "content": entry["question"]})
             messages.append({"role": "assistant", "content": entry["answer"]})
 
-    # Current question with retrieved context
-    # /no_think disables qwen3's chain-of-thought — faster for RAG where the answer is in the chunks
-    user_msg = f"/no_think\n\nContext:\n{context}\n\nQuestion: {question}"
+    # /no_think disables qwen3's chain-of-thought — only used with Ollama
+    if LLM_PROVIDER == "ollama":
+        user_msg = f"/no_think\n\nContext:\n{context}\n\nQuestion: {question}"
+    else:
+        user_msg = f"Context:\n{context}\n\nQuestion: {question}"
     messages.append({"role": "user", "content": user_msg})
 
     answer = ask_llm(messages)
@@ -242,7 +227,7 @@ def answer_question(
 def main():
     print("Loading RAG chatbot...")
     collections, model = get_retriever()
-    print(f"Ready! Using model '{OLLAMA_MODEL}' via Ollama.")
+    print(f"Ready! Using model '{active_model_name()}' via {LLM_PROVIDER}.")
 
     mode = input("Select mode (customer/employee) [customer]: ").strip().lower()
     if mode not in ("customer", "employee"):

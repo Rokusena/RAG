@@ -1,317 +1,461 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR CARs — RAG Chatbot</title>
+    <title>Document Q&A</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
+            font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f0f2f5 0%, #e8ecf1 50%, #f0f2f5 100%);
+            color: #1a1a1a;
             height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
+        /* Accent bar */
+        .accent { height: 3px; background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa); flex-shrink: 0; }
+
         header {
-            background: #1e293b;
-            padding: 16px 24px;
-            border-bottom: 1px solid #334155;
+            background: #fff;
+            padding: 12px 24px;
+            border-bottom: 1px solid #e0e0e0;
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-shrink: 0;
         }
 
-        header .logo {
-            font-size: 24px;
-        }
-
-        header h1 {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        header span {
-            font-size: 13px;
-            color: #94a3b8;
-        }
+        header h1 { font-size: 16px; font-weight: 600; }
+        header .sub { font-size: 12px; color: #888; }
 
         .mode-toggle {
             margin-left: auto;
             display: flex;
-            background: #0f172a;
-            border-radius: 8px;
+            background: #f0f0f0;
+            border-radius: 6px;
             overflow: hidden;
-            border: 1px solid #334155;
+            border: 1px solid #e0e0e0;
         }
 
         .mode-toggle button {
-            padding: 8px 16px;
+            padding: 5px 14px;
             border: none;
             background: transparent;
-            color: #94a3b8;
+            color: #666;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .mode-toggle button.active { background: #2563eb; color: #fff; }
+
+        /* Layout */
+        .main { display: flex; flex: 1; overflow: hidden; }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background: #fff;
+            border-right: 1px solid #e0e0e0;
+            padding: 16px;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar h3 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .count {
             font-size: 13px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
+            color: #1a1a1a;
+            margin-bottom: 12px;
         }
 
-        .mode-toggle button.active {
-            background: #3b82f6;
-            color: #fff;
+        .sidebar ul { list-style: none; }
+
+        .sidebar li {
+            font-size: 12px;
+            color: #555;
+            padding: 4px 0;
+            border-bottom: 1px solid #f5f5f5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
-        .mode-toggle button:not(.active):hover {
-            background: #1e293b;
-            color: #e2e8f0;
-        }
+        /* Chat area */
+        .chat-wrap { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 
-        #chat-container {
+        #chat {
             flex: 1;
             overflow-y: auto;
             padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
-        .message {
+        /* Suggested questions */
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .suggestions button {
+            padding: 6px 12px;
+            border: 1px solid #d0d5dd;
+            border-radius: 16px;
+            background: #fff;
+            color: #344054;
+            font-size: 12px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+
+        .suggestions button:hover { background: #f5f7fa; border-color: #2563eb; color: #2563eb; }
+
+        /* Messages */
+        .msg-row {
+            display: flex;
+            gap: 8px;
             max-width: 720px;
-            line-height: 1.6;
-            padding: 12px 16px;
+        }
+
+        .msg-row.user { align-self: flex-end; flex-direction: row-reverse; }
+        .msg-row.bot { align-self: flex-start; }
+
+        .avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .msg-row.bot .avatar { background: #e8ecf1; color: #555; }
+        .msg-row.user .avatar { background: #2563eb; color: #fff; }
+
+        .bubble {
+            line-height: 1.55;
+            padding: 10px 14px;
             border-radius: 12px;
+            font-size: 14px;
             white-space: pre-wrap;
             word-wrap: break-word;
         }
 
-        .message.user {
-            align-self: flex-end;
-            background: #3b82f6;
+        .msg-row.user .bubble {
+            background: #2563eb;
             color: #fff;
-            border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 3px;
+            box-shadow: 0 1px 3px rgba(37,99,235,0.2);
         }
 
-        .message.assistant {
-            align-self: flex-start;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-bottom-left-radius: 4px;
+        .msg-row.bot .bubble {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-bottom-left-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
         }
 
-        .message .sources {
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid #334155;
-            font-size: 12px;
-            color: #94a3b8;
-        }
+        .msg-row.bot .bubble.error { border-color: #e0b4b4; color: #992222; }
 
-        .message .sources span {
-            background: #334155;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-right: 4px;
+        .sources {
+            margin-top: 6px;
+            padding-top: 6px;
+            border-top: 1px solid #f0f0f0;
             font-size: 11px;
+            color: #888;
+            line-height: 2;
         }
 
-        .typing-indicator {
-            align-self: flex-start;
-            padding: 12px 16px;
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            border-bottom-left-radius: 4px;
-            color: #94a3b8;
-            font-style: italic;
+        .sources .tag {
+            display: inline-block;
+            background: #f0f4f8;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: #475569;
+            margin-right: 4px;
+            cursor: default;
         }
 
-        #input-area {
-            background: #1e293b;
-            border-top: 1px solid #334155;
-            padding: 16px 24px;
+        .thinking-row {
             display: flex;
-            gap: 12px;
+            gap: 8px;
+            align-self: flex-start;
         }
 
-        #question-input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            background: #0f172a;
-            color: #e2e8f0;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.2s;
-        }
+        .thinking-row .bubble { color: #999; background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 
-        #question-input:focus {
-            border-color: #3b82f6;
-        }
-
-        #question-input::placeholder {
-            color: #64748b;
-        }
-
-        #send-btn {
+        /* Input */
+        #input-area {
+            background: #fff;
+            border-top: 1px solid #e0e0e0;
             padding: 12px 24px;
-            background: #3b82f6;
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        #q {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+            color: #1a1a1a;
+            font-size: 14px;
+            outline: none;
+        }
+
+        #q:focus { border-color: #2563eb; }
+        #q::placeholder { color: #aaa; }
+
+        #send {
+            padding: 10px 20px;
+            background: #2563eb;
             color: #fff;
             border: none;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.2s;
         }
 
-        #send-btn:hover {
-            background: #2563eb;
-        }
+        #send:hover { background: #1d4ed8; }
+        #send:disabled { background: #cbd5e1; cursor: not-allowed; }
 
-        #send-btn:disabled {
-            background: #334155;
-            cursor: not-allowed;
-        }
-
-        .error {
-            color: #f87171;
-            background: #1e293b;
-            border: 1px solid #7f1d1d;
+        /* Mobile */
+        @media (max-width: 700px) {
+            .sidebar { display: none; }
+            header { padding: 10px 16px; }
+            header h1 { font-size: 15px; }
+            header .sub { display: none; }
+            .mode-toggle button { padding: 5px 10px; font-size: 11px; }
+            #chat { padding: 16px; }
+            #input-area { padding: 10px 16px; }
+            .msg-row { max-width: 92%; }
+            .bubble { font-size: 13.5px; }
         }
     </style>
 </head>
 <body>
+    <div class="accent"></div>
     <header>
-        <span class="logo">🚗</span>
         <div>
-            <h1>HR CARs Assistant</h1>
-            <span id="mode-subtitle">Ask anything about our dealership</span>
+            <h1>Document Q&A</h1>
+            <div class="sub" id="sub">Ask anything about your documents</div>
         </div>
         <div class="mode-toggle">
-            <button id="mode-customer" class="active" onclick="switchMode('customer')">Customer</button>
-            <button id="mode-employee" onclick="switchMode('employee')">Employee</button>
+            <button id="btn-c" class="active" onclick="setMode('customer')">Customer</button>
+            <button id="btn-e" onclick="setMode('employee')">Employee</button>
         </div>
     </header>
 
-    <div id="chat-container">
-        <div class="message assistant">Hello! I'm the HR CARs assistant. Ask me anything about our dealership — vehicles, policies, sales process, and more.</div>
-    </div>
+    <div class="main">
+        <aside class="sidebar">
+            <h3>Documents</h3>
+            <div class="count" id="doc-count">Loading...</div>
+            <ul id="doc-list"></ul>
+        </aside>
 
-    <div id="input-area">
-        <input type="text" id="question-input" placeholder="Type your question..." autocomplete="off" />
-<button id="send-btn">Send</button>
+        <div class="chat-wrap">
+            <div id="chat"></div>
+            <div id="input-area">
+                <input type="text" id="q" placeholder="Type your question..." autocomplete="off" />
+                <button id="send">Send</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        const API_URL = "http://localhost:8000/ask";
-        const chatContainer = document.getElementById("chat-container");
-        const input = document.getElementById("question-input");
-        const sendBtn = document.getElementById("send-btn");
-        // Conversation history (last 3 exchanges sent to API)
-        const conversationHistory = [];
-        let currentMode = "customer";
+        const chat = document.getElementById("chat");
+        const input = document.getElementById("q");
+        const sendBtn = document.getElementById("send");
+        const hist = [];
+        let mode = "customer";
 
-        function switchMode(mode) {
-            currentMode = mode;
-            conversationHistory.length = 0;
+        const SUGGESTIONS = [
+            "What warranty plans do you offer?",
+            "How do I book a test drive?",
+            "What financing options are available?",
+            "What is the return policy?",
+        ];
 
-            document.getElementById("mode-customer").classList.toggle("active", mode === "customer");
-            document.getElementById("mode-employee").classList.toggle("active", mode === "employee");
-
-            const subtitle = document.getElementById("mode-subtitle");
-            subtitle.textContent = mode === "employee"
-                ? "Internal employee assistant"
-                : "Ask anything about our dealership";
-
-            // Clear chat and show welcome message
-            chatContainer.innerHTML = "";
-            const greeting = mode === "employee"
-                ? "Hello! I'm the HR CARs internal assistant. I can help with company policies, compensation, benefits, and all dealership information."
-                : "Hello! I'm the HR CARs assistant. Ask me anything about our dealership — vehicles, policies, sales process, and more.";
-            addMessage(greeting, "assistant");
-        }
-
-        function addMessage(text, role, sources) {
-            const div = document.createElement("div");
-            div.className = `message ${role}`;
-            div.textContent = text;
-
-            if (sources && sources.length > 0) {
-                const srcDiv = document.createElement("div");
-                srcDiv.className = "sources";
-                srcDiv.innerHTML = "📄 Sources: " + sources.map(s => `<span>${s}</span>`).join(" ");
-                div.appendChild(srcDiv);
+        // --- Sidebar ---
+        async function loadDocs() {
+            try {
+                const res = await fetch("/documents");
+                const data = await res.json();
+                const files = data.files || [];
+                document.getElementById("doc-count").textContent = files.length + " files loaded";
+                const ul = document.getElementById("doc-list");
+                ul.innerHTML = "";
+                files.forEach(f => {
+                    const li = document.createElement("li");
+                    li.textContent = f.replace(/\.(txt|md|pdf)$/, "").replace(/-/g, " ");
+                    li.title = f;
+                    ul.appendChild(li);
+                });
+            } catch {
+                document.getElementById("doc-count").textContent = "Could not load";
             }
-
-            chatContainer.appendChild(div);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-            return div;
         }
 
-        function showTyping() {
+        // --- Mode ---
+        function setMode(m) {
+            mode = m;
+            hist.length = 0;
+            document.getElementById("btn-c").classList.toggle("active", m === "customer");
+            document.getElementById("btn-e").classList.toggle("active", m === "employee");
+            document.getElementById("sub").textContent =
+                m === "employee" ? "Internal employee assistant" : "Ask anything about your documents";
+            chat.innerHTML = "";
+            const welcome = m === "employee"
+                ? "Hello! I can help with company policies, compensation, benefits, and all dealership information."
+                : "Hello! Ask me anything about our dealership \u2014 vehicles, pricing, services, and more.";
+            addBot(welcome);
+            addSuggestions();
+        }
+
+        // --- Messages ---
+        function addBot(text, sources) {
+            const row = document.createElement("div");
+            row.className = "msg-row bot";
+            const av = document.createElement("div");
+            av.className = "avatar";
+            av.textContent = "Q";
+            const b = document.createElement("div");
+            b.className = "bubble";
+            b.textContent = text;
+            if (sources && sources.length) {
+                const s = document.createElement("div");
+                s.className = "sources";
+                s.innerHTML = sources.map(f => '<span class="tag">' + f + '</span>').join(" ");
+                b.appendChild(s);
+            }
+            row.appendChild(av);
+            row.appendChild(b);
+            chat.appendChild(row);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function addUser(text) {
+            const row = document.createElement("div");
+            row.className = "msg-row user";
+            const av = document.createElement("div");
+            av.className = "avatar";
+            av.textContent = "U";
+            const b = document.createElement("div");
+            b.className = "bubble";
+            b.textContent = text;
+            row.appendChild(av);
+            row.appendChild(b);
+            chat.appendChild(row);
+            chat.scrollTop = chat.scrollHeight;
+        }
+
+        function addSuggestions() {
             const div = document.createElement("div");
-            div.className = "typing-indicator";
-            div.id = "typing";
-            div.textContent = "Thinking...";
-            chatContainer.appendChild(div);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
+            div.className = "suggestions";
+            div.id = "suggestions";
+            SUGGESTIONS.forEach(q => {
+                const btn = document.createElement("button");
+                btn.textContent = q;
+                btn.onclick = () => { input.value = q; sendQ(); };
+                div.appendChild(btn);
+            });
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight;
         }
 
-        function removeTyping() {
-            const el = document.getElementById("typing");
-            if (el) el.remove();
+        function showThinking() {
+            const row = document.createElement("div");
+            row.className = "thinking-row";
+            row.id = "thinking";
+            const av = document.createElement("div");
+            av.className = "avatar";
+            av.style.background = "#e8ecf1";
+            av.style.color = "#555";
+            av.textContent = "Q";
+            const b = document.createElement("div");
+            b.className = "bubble";
+            b.textContent = "Thinking\u2026";
+            row.appendChild(av);
+            row.appendChild(b);
+            chat.appendChild(row);
+            chat.scrollTop = chat.scrollHeight;
         }
 
-        async function sendQuestion() {
-            const question = input.value.trim();
-            if (!question) return;
+        // --- Send ---
+        async function sendQ() {
+            const q = input.value.trim();
+            if (!q) return;
 
-            addMessage(question, "user");
+            // Remove suggestions on first question
+            document.getElementById("suggestions")?.remove();
+
+            addUser(q);
             input.value = "";
             sendBtn.disabled = true;
-            showTyping();
+            showThinking();
 
             try {
-                const res = await fetch(API_URL, {
+                const res = await fetch("/ask", {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        question,
-                        mode: currentMode,
-                        history: conversationHistory.slice(-3),
-                    }),
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({ question: q, mode, history: hist.slice(-3) }),
                 });
-
-                removeTyping();
-
+                document.getElementById("thinking")?.remove();
                 if (!res.ok) {
                     const err = await res.json().catch(() => ({}));
-                    addMessage(err.detail || `Server error (${res.status})`, "assistant error");
+                    const row = document.createElement("div");
+                    row.className = "msg-row bot";
+                    const av = document.createElement("div");
+                    av.className = "avatar";
+                    av.textContent = "Q";
+                    const b = document.createElement("div");
+                    b.className = "bubble error";
+                    b.textContent = err.detail || "Server error (" + res.status + ")";
+                    row.appendChild(av);
+                    row.appendChild(b);
+                    chat.appendChild(row);
                 } else {
                     const data = await res.json();
-                    addMessage(data.answer, "assistant", data.sources);
-                    conversationHistory.push({ question, answer: data.answer });
+                    addBot(data.answer, data.sources);
+                    hist.push({ question: q, answer: data.answer });
                 }
-            } catch (e) {
-                removeTyping();
-                addMessage("Cannot reach the API server. Make sure it's running (python api.py).", "assistant error");
+            } catch {
+                document.getElementById("thinking")?.remove();
+                addBot("Cannot reach the server. Make sure it's running (python api.py).");
             }
-
             sendBtn.disabled = false;
             input.focus();
+            chat.scrollTop = chat.scrollHeight;
         }
 
-        sendBtn.addEventListener("click", sendQuestion);
-
-        input.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") sendQuestion();
-        });
-
+        sendBtn.addEventListener("click", sendQ);
+        input.addEventListener("keydown", e => { if (e.key === "Enter") sendQ(); });
         input.focus();
+        loadDocs();
+        setMode("customer");
     </script>
 </body>
 </html>

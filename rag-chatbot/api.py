@@ -15,13 +15,14 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 
-from query import (
+from config import (
     CHROMA_DB_DIR,
     COLLECTION_CUSTOMER,
     COLLECTION_EMPLOYEE,
+    DOCUMENTS_DIR,
     EMBEDDING_MODEL,
-    answer_question,
 )
+from query import answer_question
 
 # --- Request / Response models ---
 
@@ -110,6 +111,18 @@ async def ask(request: AskRequest):
         raise HTTPException(status_code=503, detail=result["answer"])
 
     return AskResponse(answer=result["answer"], sources=result["sources"])
+
+
+@app.get("/documents")
+async def list_documents():
+    """Return list of document filenames in the documents directory."""
+    if not os.path.exists(DOCUMENTS_DIR):
+        return {"files": []}
+    files = sorted(
+        f for f in os.listdir(DOCUMENTS_DIR)
+        if f.endswith((".txt", ".md", ".pdf"))
+    )
+    return {"files": files}
 
 
 @app.get("/")
