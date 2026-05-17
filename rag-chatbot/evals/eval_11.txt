@@ -1,0 +1,876 @@
+======================================================================
+  RAG Chatbot Evaluation #11
+  Date: 2026-05-17 23:03
+  Model: gpt-4o-mini (openai)
+  Questions: 20
+======================================================================
+
+----------------------------------------------------------------------
+  Q1/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the return policy for vehicles bought online?
+
+  Expected answer:
+    Distance/online purchases have a 14-day cooling-off period from delivery date. The vehicle must not be driven more than 300 km beyond delivery odometer, must be in original condition, and all documentation/keys/accessories returned. Refunds are processed within 14 business days after inspection.
+
+  Actual answer:
+    For in-person purchases, we offer a voluntary 3-day satisfaction guarantee. For distance/online purchases, you have a 14-day cooling-off period. The vehicle must have less than 300 km added, be in original condition, and all documentation/keys returned. Refunds are processed within 14 business days. Contact: complaints@autogroupmotors.lt or +370 5 123 4573.
+
+  Sources expected: ['Returns-Refunds-And-Dispute-Resolution.txt']
+  Sources actual:   ['Returns-Refunds-And-Dispute-Resolution.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q2/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What are the extended warranty plans and their prices?
+
+  Expected answer:
+    Bronze Plan: powertrain only, 12 months or 20,000 km, EUR 299. Silver Plan: powertrain plus electrical, AC, steering, 18 months or 30,000 km, EUR 549. Gold Plan: bumper-to-bumper (excludes wear items), 24 months or 40,000 km, EUR 899. All plans include 24/7 roadside assistance within Lithuania and Baltics.
+
+  Actual answer:
+    Every pre-owned vehicle comes with a minimum 3-month / 5,000 km powertrain warranty. We also offer extended plans: Bronze (12 months, EUR 299), Silver (18 months, EUR 549), and Gold (24 months, EUR 899). New vehicles carry the full manufacturer warranty. Contact: service@autogroupmotors.lt or +370 5 123 4567.
+
+  Sources expected: ['Warranty-And-After-Sales-Policy.txt']
+  Sources actual:   ['Warranty-And-After-Sales-Policy.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q3/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How can I book a test drive and what do I need?
+
+  Expected answer:
+    Book online at www.autogroupmotors.lt/test-drive, by phone at +370 5 123 4567, or walk in. Available Mon-Fri 9:00-17:00 and Sat 9:00-14:00. Each slot is 30 minutes (15-20 min driving). You need a valid driving license (Category B) and a valid ID. Must be 18+ and not impaired.
+
+  Actual answer:
+    You can book a test drive online at www.autogroupmotors.lt/test-drive, by calling +370 5 123 4567, or walk in. You need a valid driving license and ID. Each slot is 30 minutes (15-20 min driving). Available Mon-Fri 9:00-17:00 and Sat 9:00-14:00. Insurance excess is EUR 500 in case of negligence.
+
+  Sources expected: ['Test-Drive-Policy-And-Procedure.txt']
+  Sources actual:   ['Test-Drive-Policy-And-Procedure.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q4/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What auto loan interest rates do you offer?
+
+  Expected answer:
+    Consumer auto loan rates start from 4.9% APR with strong credit, through partner banks SEB, Swedbank, Luminor, and Šiaulių Bankas. Loan terms 12-84 months, minimum 10% down payment. Pre-approval within 2 business hours. First-Time Buyer Program (ages 18-25) at 6.5% APR for vehicles up to EUR 15,000 with 20% down or co-signer.
+
+  Actual answer:
+    We partner with SEB, Swedbank, Luminor, and Šiaulių Bankas. Auto loan rates start from 4.9% APR, terms 12-84 months, down payment as low as 10%. Pre-approval within 2 business hours. We also offer business leasing (24-60 months) and a First-Time Buyer Program (6.5% APR, ages 18-25). Contact: finance@autogroupmotors.lt or +370 5 123 4568.
+
+  Sources expected: ['Financing-And-Leasing-Options.txt']
+  Sources actual:   ['Financing-And-Leasing-Options.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q5/20 [FAQ] (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does a synthetic oil change cost?
+
+  Expected answer:
+    Synthetic oil change costs EUR 79. Includes up to 5-6 liters of oil and oil filter. Prices include 21% VAT. Conventional oil is EUR 49 and diesel vehicles EUR 89.
+
+  Actual answer:
+    Oil change prices: Conventional oil EUR 49, Synthetic oil EUR 79, Diesel vehicles EUR 89. All include up to 5-6L of oil and oil filter. Prices include 21% VAT. Book at service@autogroupmotors.lt or +370 5 123 4567.
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Service-And-Maintenance-Price-List.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q6/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What SUVs do you currently have in stock and at what prices?
+
+  Expected answer:
+    Current SUV stock includes: Volvo XC60 EUR 42,500, BMW X3 EUR 39,900, Mercedes-Benz GLC EUR 37,800, Toyota RAV4 EUR 34,200, Hyundai Tucson EUR 33,900, Volkswagen Tiguan EUR 27,500, Mazda CX-5 EUR 28,700, Land Rover Discovery Sport EUR 26,900.
+
+  Actual answer:
+    The current SUVs and crossovers in stock are:
+
+1. 2023 Volvo XC60 B5 Momentum — Mileage: 15,000 km, Colour: Crystal White, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 42,500
+2. 2022 BMW X3 xDrive20d M Sport — Mileage: 31,000 km, Colour: Phytonic Blue, Fuel: Diesel, Transmission: Automatic, Price: EUR 39,900
+3. 2021 Mercedes-Benz GLC 220d 4MATIC — Mileage: 44,000 km, Colour: Selenite Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 37,800
+4. 2022 Toyota RAV4 2.5 Hybrid Style — Mileage: 28,000 km, Colour: Emotional Red, Fuel: Hybrid, Transmission: CVT, Price: EUR 34,200
+5. 2020 Volkswagen Tiguan 2.0 TDI 4MOTION R-Line — Mileage: 55,000 km, Colour: Pure White, Fuel: Diesel, Transmission: DSG, Price: EUR 27,500
+6. 2023 Hyundai Tucson 1.6 T-GDI HEV Premium — Mileage: 12,000 km, Colour: Amazon Grey, Fuel: Hybrid, Transmission: Automatic, Price: EUR 33,900
+7. 2021 Mazda CX-5 2.5 Skyactiv-G Revolution — Mileage: 40,000 km, Colour: Machine Grey, Fuel: Petrol, Transmission: Automatic, Price: EUR 28,700
+8. 2019 Land Rover Discovery Sport 2.0 TD4 SE — Mileage: 72,000 km, Colour: Corris Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 26,900
+
+  Sources expected: ['Vehicle-Stock-And-Inventory.txt']
+  Sources actual:   ['Vehicle-Comparison-And-Buyers-Guide.txt', 'Vehicle-Stock-And-Inventory.txt', 'Test-Drive-Policy-And-Procedure.txt', 'Trade-In-And-Vehicle-Appraisal-Guide.txt']
+
+  Retrieved chunks (5):
+    [1] Vehicle-Comparison-And-Buyers-Guide.txt  distance=0.9305
+        3. SUVs and Crossovers
+        Best for: Families, outdoor activities, unpaved roads, winter driving conditions
+        Popular models in our inventory: Toyota RAV4, Volkswagen Tiguan, BMW X3, Hyundai Tucson, Kia Sportage
+
+    [2] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.9458
+        - Market demand: Trade-in values are influenced by current market demand. SUVs and crossovers currently command premium prices in Lithuania, while sedans and older diesel vehicles have seen declining demand due to environmental concerns and potential future restrictions in city centers.
+
+    [3] Vehicle-Stock-And-Inventory.txt  distance=1.0165
+        Vehicle Stock and Inventory
+        ===========================
+        
+        1. Overview
+        AutoGroup Motors maintains a rotating inventory of quality pre-owned vehicles sourced from Western Europe, the United States, and Japan. Our current stock includes sedans, SUVs, hatchbacks, wagons, and light commercial vehicles. All vehicles listed below have passed our 150-point inspection and come with a minimum 12-month warranty.
+        
+        Stock is updated regularly. For the most current availability and pricing, visit www.autogroupmotors.lt/inventory or contact our sales team at sales@autogroupmotors.lt or +370 5 123 4567.
+        
+        2. Current Vehicle Stock
+        
+        a. Sedans
+        
+        - 2022 BMW 320d M Sport — Mileage: 42,000 km, Colour: Mineral Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,900
+        - 2021 Mercedes-Benz C200 AMG Line — Mileage: 38,000 km, Colour: Obsidian Black, Fuel: Petrol, Transmission: Automatic, Price: EUR 31,500
+        - 2023 Audi A4 40 TFSI S Line — Mileage: 19,000 km, Colour: Glacier White, Fuel: Petrol, Transmission: Automatic, Price: EUR 33,200
+        - 2020 Volkswagen Passat 2.0 TDI Business — Mileage: 67,000 km, Colour: Reflex Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 19,800
+        - 2021 Toyota Camry 2.5 Hybrid Executive — Mileage: 51,000 km, Colour: Platinum White Pearl, Fuel: Hybrid, Transmission: CVT, Price: EUR 26,400
+        - 2019 Volvo S60 T5 Inscription — Mileage: 58,000 km, Colour: Denim Blue, Fuel: Petrol, Transmission: Automatic, Price: EUR 24,500
+        - 2022 Škoda Superb 2.0 TDI Style — Mileage: 35,000 km, Colour: Magnetic Brown, Fuel: Diesel, Transmission: DSG, Price: EUR 25,900
+        
+        b. SUVs and Crossovers
+        
+        - 2023 Volvo XC60 B5 Momentum — Mileage: 15,000 km, Colour: Crystal White, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 42,500
+        - 2022 BMW X3 xDrive20d M Sport — Mileage: 31,000 km, Colour: Phytonic Blue, Fuel: Diesel, Transmission: Automatic, Price: EUR 39,900
+        - 2021 Mercedes-Benz GLC 220d 4MATIC — Mileage: 44,000 km, Colour: Selenite Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 37,800
+        - 2022 Toyota RAV4 2.5 Hybrid Style — Mileage: 28,000 km, Colour: Emotional Red, Fuel: Hybrid, Transmission: CVT, Price: EUR 34,200
+        - 2020 Volkswagen Tiguan 2.0 TDI 4MOTION R-Line — Mileage: 55,000 km, Colour: Pure White, Fuel: Diesel, Transmission: DSG, Price: EUR 27,500
+        - 2023 Hyundai Tucson 1.6 T-GDI HEV Premium — Mileage: 12,000 km, Colour: Amazon Grey, Fuel: Hybrid, Transmission: Automatic, Price: EUR 33,900
+        - 2021 Mazda CX-5 2.5 Skyactiv-G Revolution — Mileage: 40,000 km, Colour: Machine Grey, Fuel: Petrol, Transmission: Automatic, Price: EUR 28,700
+        - 2019 Land Rover Discovery Sport 2.0 TD4 SE — Mileage: 72,000 km, Colour: Corris Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 26,900
+        
+        c. Hatchbacks and Compact Cars
+        
+        - 2022 Volkswagen Golf 8 2.0 TDI Style — Mileage: 29,000 km, Colour: Atlantic Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 23,800
+        - 2023 BMW 118i M Sport — Mileage: 11,000 km, Colour: Melbourne Red, Fuel: Petrol, Transmission: Automatic, Price: EUR 27,500
+        - 2021 Audi A3 Sportback 35 TFSI S Line — Mileage: 36,000 km, Colour: Navarra Blue, Fuel: Petrol, Transmission: S tronic, Price: EUR 25,200
+        - 2022 Mazda 3 2.0 Skyactiv-X Revolution — Mileage: 22,000 km, Colour: Soul Red Crystal, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 24,600
+        - 2020 Toyota Corolla 1.8 Hybrid Comfort — Mileage: 48,000 km, Colour: Celestite Grey, Fuel: Hybrid, Transmission: CVT, Price: EUR 19,200
+        
+        d. Wagons and Estates
+        
+        - 2022 Volvo V60 B4 Momentum — Mileage: 33,000 km, Colour: Thunder Grey, Fuel: Mild Hybrid Diesel, Transmission: Automatic, Price: EUR 32,800
+        - 2021 BMW 320d Touring M Sport — Mileage: 47,000 km, Colour: Black Sapphire, Fuel: Diesel, Transmission: Automatic, Price: EUR 30,500
+        - 2022 Škoda Octavia Combi 2.0 TDI Style — Mileage: 25,000 km, Colour: Lava Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 24,900
+        - 2020 Mercedes-Benz C220d Estate AMG Line — Mileage: 61,000 km, Colour: Iridium Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,200
+        
+        e. Electric and Plug-In Hybrid Vehicles
+        
+        - 2023 Tesla Model 3 Long Range — Mileage: 8,000 km, Colour: Pearl White, Range: 602 km (WLTP), Transmission: Single-speed, Price: EUR 39,900
+        - 2022 Volkswagen ID.4 Pro Performance — Mileage: 18,000 km, Colour: Moonstone Grey, Range: 520 km (WLTP), Transmission: Single-speed, Price: EUR 34,500
+        - 2023 BMW iX1 xDrive30 — Mileage: 9,000 km, Colour: Storm Bay, Range: 440 km (WLTP), Transmission: Single-speed, Price: EUR 44,200
+        - 2022 Volvo XC40 Recharge Pure Electric — Mileage: 21,000 km, Colour: Sage Green, Range: 425 km (WLTP), Transmission: Single-speed, Price: EUR 37,800
+        - 2021 Mercedes-Benz EQA 250 — Mileage: 30,000 km, Colour: Digital White, Range: 426 km (WLTP), Transmission: Single-speed, Price: EUR 33,500
+        
+        f. Light Commercial Vehicles
+        
+        - 2021 Volkswagen Transporter T6.1 2.0 TDI — Mileage: 62,000 km, Colour: Reflex Silver, Fuel: Diesel, Payload: 1,050 kg, Price: EUR 27,900
+        - 2022 Ford Transit Custom 2.0 EcoBlue Limited — Mileage: 38,000 km, Colour: Frozen White, Fuel: Diesel, Payload: 1,100 kg, Price: EUR 29,500
+        - 2020 Mercedes-Benz Vito 116 CDI — Mileage: 71,000 km, Colour: Cavansite Blue, Fuel: Diesel, Payload: 1,045 kg, Price: EUR 25,800
+        
+        3. Vehicle Condition Grades
+        Each vehicle in our stock is assigned a condition grade:
+        
+        - Grade A (Excellent): Near-new condition, no visible wear, under 20,000 km
+        - Grade B (Very Good): Minor cosmetic wear, well-maintained, under 50,000 km
+        - Grade C (Good): Normal wear consistent with age and mileage, fully serviced
+        - Grade D (Fair): May require minor cosmetic attention, priced accordingly
+        
+        4. Reservation Policy
+        Customers may reserve any vehicle in stock for up to 72 hours with a refundable deposit of EUR 500. Reservations can be made online, by phone, or in person. If the purchase is not completed within the reservation period, the deposit is refunded in full.
+        
+        5. Trade-In
+        We accept trade-ins against any vehicle in stock. Trade-in valuations are provided free of charge and are valid for 7 days. See our Trade-In and Vehicle Appraisal Guide for details.
+        
+        6. Contact
+        For stock inquiries and test drive bookings, contact sales@autogroupmotors.lt or call +370 5 123 4567. Visit our showroom at Gedimino pr. 45, Vilnius, Monday to Friday 9:00–18:00 and Saturday 9:00–15:00.
+
+    [4] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=1.0476
+        4. Vehicles We Accept for Trade-In
+        We accept most passenger vehicles, SUVs, and light commercial vehicles regardless of make or origin. However, we reserve the right to decline a trade-in offer for vehicles that are not roadworthy, have outstanding legal encumbrances (such as unpaid fines or active leasing contracts not yet settled), or are older than 20 years with significant mechanical issues.
+
+    [5] Test-Drive-Policy-And-Procedure.txt  distance=1.0477
+        Most vehicles in our inventory are available for test drives. However, recently arrived vehicles that have not yet completed our inspection process, vehicles with pending service work, or vehicles that are reserved or sold may not be available. High-value or specialty vehicles may require a refundable deposit of EUR 100 before the test drive, which is returned upon safe completion of the drive.
+
+----------------------------------------------------------------------
+  Q7/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What do I get for referring a friend?
+
+  Expected answer:
+    When you refer a new customer who completes a purchase, you receive EUR 200 service credit or EUR 150 cash. The referred customer gets EUR 100 service credit. There is no limit on referrals. Rewards are processed within 14 business days.
+
+  Actual answer:
+    When you refer a new customer to AutoGroup Motors and they complete a vehicle purchase, you receive a choice of either a EUR 200 service credit or a EUR 150 cash payment. Additionally, the referred customer receives a EUR 100 service credit applied to their new account. There is no limit to the number of referrals you can make, and referral rewards are processed within 14 business days of the referred customer's purchase completion.
+
+  Sources expected: ['Customer-Loyalty-And-Referral-Program.txt']
+  Sources actual:   ['Customer-Loyalty-And-Referral-Program.txt']
+
+  Retrieved chunks (5):
+    [1] Customer-Loyalty-And-Referral-Program.txt  distance=0.8203
+        3. Referral Rewards
+        When you refer a new customer to AutoGroup Motors and they complete a vehicle purchase, both you and the referred customer receive a reward:
+        
+        - Referring customer: EUR 200 service credit or EUR 150 cash payment (your choice)
+        - Referred customer: EUR 100 service credit applied to their new account
+
+    [2] Customer-Loyalty-And-Referral-Program.txt  distance=0.9181
+        There is no limit to the number of referrals you can make. Referrals are tracked through our CRM system. To ensure your referral is recorded, the referred customer should mention your name at the time of their first visit or include it in their online inquiry form. Referral rewards are processed within 14 business days of the referred customer's purchase completion.
+
+    [3] Customer-Loyalty-And-Referral-Program.txt  distance=1.0281
+        Customer Loyalty and Referral Program
+        =======================================
+
+    [4] Customer-Loyalty-And-Referral-Program.txt  distance=1.1176
+        . Credits are non-transferable and cannot be redeemed for cash unless explicitly stated in the referral reward terms.
+
+    [5] Customer-Loyalty-And-Referral-Program.txt  distance=1.1375
+        1. Program Overview
+        At AutoGroup Motors, we value long-term relationships with our customers. Our Loyalty and Referral Program is designed to reward returning customers and those who recommend us to friends, family, and colleagues. The program is free to join and offers tangible benefits on future purchases, service, and accessories.
+
+----------------------------------------------------------------------
+  Q8/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What electric vehicles do you sell and what is their range?
+
+  Expected answer:
+    Tesla Model 3 Long Range EUR 39,900 (602 km range), Volkswagen ID.4 EUR 34,500 (520 km range), BMW iX1 EUR 44,200 (440 km range), Volvo XC40 Recharge EUR 37,800, Mercedes EQA 250 EUR 33,500.
+
+  Actual answer:
+    The electric vehicles we sell and their ranges are:
+
+1. 2023 Tesla Model 3 Long Range — Range: 602 km (WLTP)
+2. 2022 Volkswagen ID.4 Pro Performance — Range: 520 km (WLTP)
+3. 2023 BMW iX1 xDrive30 — Range: 440 km (WLTP)
+4. 2022 Volvo XC40 Recharge Pure Electric — Range: 425 km (WLTP)
+5. 2021 Mercedes-Benz EQA 250 — Range: 426 km (WLTP)
+
+  Sources expected: ['Vehicle-Stock-And-Inventory.txt']
+  Sources actual:   ['Vehicle-Comparison-And-Buyers-Guide.txt', 'Vehicle-Stock-And-Inventory.txt', 'Test-Drive-Policy-And-Procedure.txt']
+
+  Retrieved chunks (5):
+    [1] Vehicle-Comparison-And-Buyers-Guide.txt  distance=1.0406
+        Key considerations for EV buyers in Lithuania: Battery health and remaining warranty are critical factors when purchasing a used EV. Cold weather reduces battery range by 15 to 30 percent during Lithuanian winters. Plug-in hybrids (PHEVs) offer a compromise, providing 40 to 80 km of electric-only range combined with a petrol or diesel engine for longer trips.
+
+    [2] Vehicle-Comparison-And-Buyers-Guide.txt  distance=1.0425
+        Electric vehicles (EVs) have zero tailpipe emissions and significantly lower running costs compared to petrol or diesel vehicles. Charging at home overnight using a standard Lithuanian electricity tariff costs approximately EUR 3 to EUR 5 for a full charge providing 250 to 400 km of range
+
+    [3] Vehicle-Comparison-And-Buyers-Guide.txt  distance=1.0743
+        Fuel economy: Petrol hatchbacks typically achieve 5.5 to 7.5 liters per 100 km, with diesel variants achieving 4 to 5.5 liters per 100 km.
+        
+        5. Electric and Hybrid Vehicles
+        Best for: Environmentally conscious buyers, low running costs, city driving, tech enthusiasts
+        Models we source upon request: Tesla Model 3, Nissan Leaf, Hyundai Ioniq 5, BMW iX3, Volkswagen ID.4
+
+    [4] Vehicle-Stock-And-Inventory.txt  distance=1.1159
+        Vehicle Stock and Inventory
+        ===========================
+        
+        1. Overview
+        AutoGroup Motors maintains a rotating inventory of quality pre-owned vehicles sourced from Western Europe, the United States, and Japan. Our current stock includes sedans, SUVs, hatchbacks, wagons, and light commercial vehicles. All vehicles listed below have passed our 150-point inspection and come with a minimum 12-month warranty.
+        
+        Stock is updated regularly. For the most current availability and pricing, visit www.autogroupmotors.lt/inventory or contact our sales team at sales@autogroupmotors.lt or +370 5 123 4567.
+        
+        2. Current Vehicle Stock
+        
+        a. Sedans
+        
+        - 2022 BMW 320d M Sport — Mileage: 42,000 km, Colour: Mineral Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,900
+        - 2021 Mercedes-Benz C200 AMG Line — Mileage: 38,000 km, Colour: Obsidian Black, Fuel: Petrol, Transmission: Automatic, Price: EUR 31,500
+        - 2023 Audi A4 40 TFSI S Line — Mileage: 19,000 km, Colour: Glacier White, Fuel: Petrol, Transmission: Automatic, Price: EUR 33,200
+        - 2020 Volkswagen Passat 2.0 TDI Business — Mileage: 67,000 km, Colour: Reflex Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 19,800
+        - 2021 Toyota Camry 2.5 Hybrid Executive — Mileage: 51,000 km, Colour: Platinum White Pearl, Fuel: Hybrid, Transmission: CVT, Price: EUR 26,400
+        - 2019 Volvo S60 T5 Inscription — Mileage: 58,000 km, Colour: Denim Blue, Fuel: Petrol, Transmission: Automatic, Price: EUR 24,500
+        - 2022 Škoda Superb 2.0 TDI Style — Mileage: 35,000 km, Colour: Magnetic Brown, Fuel: Diesel, Transmission: DSG, Price: EUR 25,900
+        
+        b. SUVs and Crossovers
+        
+        - 2023 Volvo XC60 B5 Momentum — Mileage: 15,000 km, Colour: Crystal White, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 42,500
+        - 2022 BMW X3 xDrive20d M Sport — Mileage: 31,000 km, Colour: Phytonic Blue, Fuel: Diesel, Transmission: Automatic, Price: EUR 39,900
+        - 2021 Mercedes-Benz GLC 220d 4MATIC — Mileage: 44,000 km, Colour: Selenite Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 37,800
+        - 2022 Toyota RAV4 2.5 Hybrid Style — Mileage: 28,000 km, Colour: Emotional Red, Fuel: Hybrid, Transmission: CVT, Price: EUR 34,200
+        - 2020 Volkswagen Tiguan 2.0 TDI 4MOTION R-Line — Mileage: 55,000 km, Colour: Pure White, Fuel: Diesel, Transmission: DSG, Price: EUR 27,500
+        - 2023 Hyundai Tucson 1.6 T-GDI HEV Premium — Mileage: 12,000 km, Colour: Amazon Grey, Fuel: Hybrid, Transmission: Automatic, Price: EUR 33,900
+        - 2021 Mazda CX-5 2.5 Skyactiv-G Revolution — Mileage: 40,000 km, Colour: Machine Grey, Fuel: Petrol, Transmission: Automatic, Price: EUR 28,700
+        - 2019 Land Rover Discovery Sport 2.0 TD4 SE — Mileage: 72,000 km, Colour: Corris Grey, Fuel: Diesel, Transmission: Automatic, Price: EUR 26,900
+        
+        c. Hatchbacks and Compact Cars
+        
+        - 2022 Volkswagen Golf 8 2.0 TDI Style — Mileage: 29,000 km, Colour: Atlantic Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 23,800
+        - 2023 BMW 118i M Sport — Mileage: 11,000 km, Colour: Melbourne Red, Fuel: Petrol, Transmission: Automatic, Price: EUR 27,500
+        - 2021 Audi A3 Sportback 35 TFSI S Line — Mileage: 36,000 km, Colour: Navarra Blue, Fuel: Petrol, Transmission: S tronic, Price: EUR 25,200
+        - 2022 Mazda 3 2.0 Skyactiv-X Revolution — Mileage: 22,000 km, Colour: Soul Red Crystal, Fuel: Mild Hybrid Petrol, Transmission: Automatic, Price: EUR 24,600
+        - 2020 Toyota Corolla 1.8 Hybrid Comfort — Mileage: 48,000 km, Colour: Celestite Grey, Fuel: Hybrid, Transmission: CVT, Price: EUR 19,200
+        
+        d. Wagons and Estates
+        
+        - 2022 Volvo V60 B4 Momentum — Mileage: 33,000 km, Colour: Thunder Grey, Fuel: Mild Hybrid Diesel, Transmission: Automatic, Price: EUR 32,800
+        - 2021 BMW 320d Touring M Sport — Mileage: 47,000 km, Colour: Black Sapphire, Fuel: Diesel, Transmission: Automatic, Price: EUR 30,500
+        - 2022 Škoda Octavia Combi 2.0 TDI Style — Mileage: 25,000 km, Colour: Lava Blue, Fuel: Diesel, Transmission: DSG, Price: EUR 24,900
+        - 2020 Mercedes-Benz C220d Estate AMG Line — Mileage: 61,000 km, Colour: Iridium Silver, Fuel: Diesel, Transmission: Automatic, Price: EUR 28,200
+        
+        e. Electric and Plug-In Hybrid Vehicles
+        
+        - 2023 Tesla Model 3 Long Range — Mileage: 8,000 km, Colour: Pearl White, Range: 602 km (WLTP), Transmission: Single-speed, Price: EUR 39,900
+        - 2022 Volkswagen ID.4 Pro Performance — Mileage: 18,000 km, Colour: Moonstone Grey, Range: 520 km (WLTP), Transmission: Single-speed, Price: EUR 34,500
+        - 2023 BMW iX1 xDrive30 — Mileage: 9,000 km, Colour: Storm Bay, Range: 440 km (WLTP), Transmission: Single-speed, Price: EUR 44,200
+        - 2022 Volvo XC40 Recharge Pure Electric — Mileage: 21,000 km, Colour: Sage Green, Range: 425 km (WLTP), Transmission: Single-speed, Price: EUR 37,800
+        - 2021 Mercedes-Benz EQA 250 — Mileage: 30,000 km, Colour: Digital White, Range: 426 km (WLTP), Transmission: Single-speed, Price: EUR 33,500
+        
+        f. Light Commercial Vehicles
+        
+        - 2021 Volkswagen Transporter T6.1 2.0 TDI — Mileage: 62,000 km, Colour: Reflex Silver, Fuel: Diesel, Payload: 1,050 kg, Price: EUR 27,900
+        - 2022 Ford Transit Custom 2.0 EcoBlue Limited — Mileage: 38,000 km, Colour: Frozen White, Fuel: Diesel, Payload: 1,100 kg, Price: EUR 29,500
+        - 2020 Mercedes-Benz Vito 116 CDI — Mileage: 71,000 km, Colour: Cavansite Blue, Fuel: Diesel, Payload: 1,045 kg, Price: EUR 25,800
+        
+        3. Vehicle Condition Grades
+        Each vehicle in our stock is assigned a condition grade:
+        
+        - Grade A (Excellent): Near-new condition, no visible wear, under 20,000 km
+        - Grade B (Very Good): Minor cosmetic wear, well-maintained, under 50,000 km
+        - Grade C (Good): Normal wear consistent with age and mileage, fully serviced
+        - Grade D (Fair): May require minor cosmetic attention, priced accordingly
+        
+        4. Reservation Policy
+        Customers may reserve any vehicle in stock for up to 72 hours with a refundable deposit of EUR 500. Reservations can be made online, by phone, or in person. If the purchase is not completed within the reservation period, the deposit is refunded in full.
+        
+        5. Trade-In
+        We accept trade-ins against any vehicle in stock. Trade-in valuations are provided free of charge and are valid for 7 days. See our Trade-In and Vehicle Appraisal Guide for details.
+        
+        6. Contact
+        For stock inquiries and test drive bookings, contact sales@autogroupmotors.lt or call +370 5 123 4567. Visit our showroom at Gedimino pr. 45, Vilnius, Monday to Friday 9:00–18:00 and Saturday 9:00–15:00.
+
+    [5] Test-Drive-Policy-And-Procedure.txt  distance=1.1414
+        Most vehicles in our inventory are available for test drives. However, recently arrived vehicles that have not yet completed our inspection process, vehicles with pending service work, or vehicles that are reserved or sold may not be available. High-value or specialty vehicles may require a refundable deposit of EUR 100 before the test drive, which is returned upon safe completion of the drive.
+
+----------------------------------------------------------------------
+  Q9/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does delivery to Kaunas cost and how long does it take?
+
+  Expected answer:
+    Delivery to Kaunas costs EUR 79 and takes 1-2 business days. Delivery fee is waived for purchases over EUR 20,000. Local delivery within Vilnius area (up to 30 km) is complimentary.
+
+  Actual answer:
+    Delivery to Kaunas costs EUR 79 and takes 1 to 2 business days.
+
+  Sources expected: ['Vehicle-Delivery-And-Shipping-Options.txt']
+  Sources actual:   ['Vehicle-Delivery-And-Shipping-Options.txt']
+
+  Retrieved chunks (5):
+    [1] Vehicle-Delivery-And-Shipping-Options.txt  distance=0.5163
+        - Kaunas: EUR 79, delivery within 1 to 2 business days
+        - Klaipėda: EUR 129, delivery within 2 to 3 business days
+        - Šiauliai: EUR 119, delivery within 2 to 3 business days
+        - Panevėžys: EUR 99, delivery within 1 to 2 business days
+        - Other locations: Pricing available upon request, generally EUR 69 to EUR 159
+
+    [2] Vehicle-Delivery-And-Shipping-Options.txt  distance=0.6413
+        Local deliveries are available Monday through Saturday. Please allow at least 24 hours' notice when scheduling.
+        
+        4. National Delivery (Lithuania)
+        For customers located outside the Vilnius area but within Lithuania, we offer a vehicle transport service via enclosed or open car carrier. Delivery times and fees depend on the destination:
+
+    [3] Vehicle-Delivery-And-Shipping-Options.txt  distance=0.8262
+        3. Local Delivery (Vilnius and Surrounding Area)
+
+    [4] Vehicle-Delivery-And-Shipping-Options.txt  distance=0.9044
+        For customers within Vilnius city limits and the surrounding area (up to 30 km from our dealership), we offer complimentary local delivery. A member of our team will deliver the vehicle to your home or office at a time convenient for you. All handover documentation is completed on-site, and our delivery driver will provide a brief vehicle orientation.
+
+    [5] Vehicle-Delivery-And-Shipping-Options.txt  distance=0.9317
+        - Riga, Latvia: EUR 199, delivery within 3 to 5 business days
+        - Tallinn, Estonia: EUR 299, delivery within 5 to 7 business days
+        - Other Baltic locations: Pricing available upon request
+
+----------------------------------------------------------------------
+  Q10/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What KASKO insurance options are available and how much do they cost?
+
+  Expected answer:
+    KASKO (comprehensive) insurance costs 2-6% of insured vehicle value annually (e.g., EUR 300-EUR 900 for a EUR 15,000 vehicle). Partners include ERGO, Gjensidige, BTA, and Compensa Vienna Insurance Group. Gjensidige offers 10% discount for dashcams or ADAS systems. BTA offers Mini-KASKO covering theft and total loss at reduced rates. Complimentary claims assistance for first 12 months.
+
+  Actual answer:
+    The KASKO insurance options available are:
+
+1. Full comprehensive coverage (all risks) - covers damage from accidents (regardless of fault), theft, vandalism, natural disasters, fire, glass breakage, and animal collisions.
+2. Partial coverage - covers theft and total loss only.
+3. Named perils coverage - covers specific risks selected by the policyholder.
+
+KASKO premiums typically range from 2% to 6% of the vehicle's insured value. For a vehicle valued at EUR 15,000, the expected annual KASKO premiums would be between EUR 300 and EUR 900. 
+
+Additionally, bundling KASKO with financing can provide a 5% discount on the first year's premium. BTA offers a Mini-KASKO product that covers theft and total loss at significantly reduced premiums compared to full KASKO, suitable for older vehicles or cost-conscious buyers.
+
+  Sources expected: ['Insurance-Options-And-Partners.txt']
+  Sources actual:   ['Financing-And-Leasing-Options.txt', 'Insurance-Options-And-Partners.txt']
+
+  Retrieved chunks (5):
+    [1] Insurance-Options-And-Partners.txt  distance=0.6708
+        Coverage options within KASKO policies include:
+        - Full comprehensive coverage (all risks)
+        - Partial coverage (theft and total loss only)
+        - Named perils coverage (specific risks selected by the policyholder)
+        
+        4. Our Insurance Partners
+        AutoGroup Motors works with the following insurance providers:
+
+    [2] Insurance-Options-And-Partners.txt  distance=0.6725
+        3. Comprehensive Insurance: KASKO
+        KASKO insurance provides comprehensive coverage for your own vehicle, including damage from accidents (regardless of fault), theft, vandalism, natural disasters, fire, glass breakage, and animal collisions. KASKO is not legally required but is highly recommended, especially for financed or leased vehicles where lenders typically require it.
+
+    [3] Insurance-Options-And-Partners.txt  distance=0.6914
+        KASKO premiums vary based on the vehicle's value, make, model, age, security features, the driver's profile, and the deductible amount chosen. Annual premiums typically range from 2% to 6% of the vehicle's insured value. For a vehicle valued at EUR 15,000, expect annual KASKO premiums between EUR 300 and EUR 900.
+
+    [4] Financing-And-Leasing-Options.txt  distance=0.8977
+        6. Insurance Bundling
+        We offer the option to bundle comprehensive vehicle insurance (KASKO) with your financing package. Partnering with ERGO, Gjensidige, and BTA, we can include insurance premiums in your monthly payment for a seamless ownership experience. Bundled insurance customers receive a 5% discount on the first year's premium.
+
+    [5] Insurance-Options-And-Partners.txt  distance=0.9244
+        BTA (part of Vienna Insurance Group): Offers budget-friendly KASKO options suitable for older vehicles or cost-conscious buyers. BTA's Mini-KASKO product covers theft and total loss at significantly reduced premiums compared to full KASKO.
+
+----------------------------------------------------------------------
+  Q11/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How long is a trade-in offer valid for?
+
+  Expected answer:
+    Trade-in offers are valid for 7 calendar days or 500 km driven (whichever comes first). The in-person appraisal inspection takes 20-30 minutes. Popular brands like VW, Toyota, BMW, Audi tend to hold value better. SUVs/crossovers command a premium.
+
+  Actual answer:
+    A trade-in offer is valid for 7 calendar days or 500 kilometers driven, whichever comes first.
+
+  Sources expected: ['Trade-In-And-Vehicle-Appraisal-Guide.txt']
+  Sources actual:   ['Returns-Refunds-And-Dispute-Resolution.txt', 'Trade-In-And-Vehicle-Appraisal-Guide.txt']
+
+  Retrieved chunks (5):
+    [1] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.8544
+        Step 3: Based on the inspection and current market data from platforms such as Autoplius, Mobile.de, and AutoScout24, we provide a written trade-in offer. This offer is valid for 7 calendar days or 500 kilometers driven, whichever comes first.
+
+    [2] Returns-Refunds-And-Dispute-Resolution.txt  distance=0.8653
+        . Any trade-in vehicle applied to the original purchase will be returned to the customer if still in our possession, or its trade-in value will be refunded in cash if the vehicle has already been sold.
+
+    [3] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.9755
+        Step 4: If you accept the trade-in offer, the value is applied directly to the purchase price of your new vehicle. This reduces the amount you need to finance or pay in cash. All paperwork for the transfer of ownership is handled by our team at no extra cost.
+
+    [4] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.9803
+        2. How the Trade-In Process Works
+        Step 1: Bring your vehicle to our dealership or submit an online appraisal request through our website. For online requests, you will need to provide the vehicle make, model, year, mileage, VIN, and recent photographs showing the exterior, interior, engine bay, and any damage.
+
+    [5] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.9849
+        4. Vehicles We Accept for Trade-In
+        We accept most passenger vehicles, SUVs, and light commercial vehicles regardless of make or origin. However, we reserve the right to decline a trade-in offer for vehicles that are not roadworthy, have outstanding legal encumbrances (such as unpaid fines or active leasing contracts not yet settled), or are older than 20 years with significant mechanical issues.
+
+----------------------------------------------------------------------
+  Q12/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does a pre-purchase vehicle inspection cost?
+
+  Expected answer:
+    A pre-purchase inspection costs EUR 89. OBD-II diagnostic scan is EUR 29 (waived if repair is done). Advanced diagnostics cost EUR 59. All prices include 21% VAT.
+
+  Actual answer:
+    A pre-purchase vehicle inspection costs EUR 89.
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Service-And-Maintenance-Price-List.txt', 'Test-Drive-Policy-And-Procedure.txt', 'Vehicle-Import-And-Registration-Process.txt', 'Trade-In-And-Vehicle-Appraisal-Guide.txt']
+
+  Retrieved chunks (5):
+    [1] Service-And-Maintenance-Price-List.txt  distance=0.9167
+        3. Diagnostic Services
+        
+        OBD-II Diagnostic Scan: EUR 29 (fee waived if repair is performed at our service center)
+        Advanced Diagnostic (including electrical system, ABS, airbag modules): EUR 59
+        Pre-Purchase Inspection (comprehensive 150-point check for buyers): EUR 89
+        Emissions Test Preparation and Check: EUR 39
+
+    [2] Trade-In-And-Vehicle-Appraisal-Guide.txt  distance=0.9606
+        Step 2: Our appraisal team conducts an in-person inspection, which typically takes 20 to 30 minutes. The inspection covers mechanical condition, body and paint condition, interior wear, tire condition, service history, and any aftermarket modifications. We also run a history check to verify ownership records, accident history, and outstanding finance.
+
+    [3] Vehicle-Import-And-Registration-Process.txt  distance=1.0211
+        . Before purchasing any vehicle for import, our team conducts a thorough remote inspection using high-resolution photographs, detailed condition reports, and vehicle history checks through services such as Carfax (USA), AutoDNA, and national registration databases.
+
+    [4] Test-Drive-Policy-And-Procedure.txt  distance=1.0495
+        - The customer and sales consultant conduct a walkaround of the vehicle to note any pre-existing cosmetic damage on the condition report.
+
+    [5] Service-And-Maintenance-Price-List.txt  distance=1.0627
+        Major Service (recommended every 60,000 km or 48 months):
+        Includes everything in Full Service plus timing belt or chain inspection, coolant system flush and replacement, transmission fluid replacement, power steering fluid replacement, and suspension component inspection.
+        Price: EUR 349 to EUR 599 (varies significantly by vehicle model and engine type)
+        
+        3. Diagnostic Services
+
+----------------------------------------------------------------------
+  Q13/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How long does it take to import and register a car from the USA?
+
+  Expected answer:
+    Importing from the USA takes 4-6 weeks for registration. Non-EU customs duty is 6.5% on customs value (CIF), plus 21% VAT. A 150-point inspection is performed upon arrival. Registration assistance fee is EUR 150 (included for customer purchases). Required documents include original title, customs declaration (SAD), VAT proof, technical inspection certificate, insurance, and ID.
+
+  Actual answer:
+    Importing a car from the USA typically takes 4 to 6 weeks for shipping from the East Coast. After the vehicle arrives, the full registration process in Lithuania is handled by AutoGroup Motors, but the specific timeline for registration is not provided in the context.
+
+  Sources expected: ['Vehicle-Import-And-Registration-Process.txt']
+  Sources actual:   ['Vehicle-Delivery-And-Shipping-Options.txt', 'Vehicle-Import-And-Registration-Process.txt']
+
+  Retrieved chunks (5):
+    [1] Vehicle-Import-And-Registration-Process.txt  distance=0.8146
+        6. Timeline
+        The typical timeline from vehicle purchase abroad to full registration in Lithuania is:
+        - EU imports: 5 to 10 business days
+        - USA imports (shipping from East Coast): 4 to 6 weeks
+        - Japan imports (shipping via RoRo or container): 6 to 8 weeks
+        
+        7. Contact
+        For import-related questions, contact imports@autogroupmotors.lt or call +370 5 123 4569.
+
+    [2] Vehicle-Import-And-Registration-Process.txt  distance=0.8524
+        Vehicle Import and Registration Process
+        =========================================
+        
+        1. Overview
+        AutoGroup Motors specializes in importing quality pre-owned vehicles from Western Europe, the United States, and Japan. This document explains our import process, the steps involved in registering an imported vehicle in Lithuania, and how we handle all documentation on behalf of our customers.
+
+    [3] Vehicle-Import-And-Registration-Process.txt  distance=1.0092
+        AutoGroup Motors handles the entire registration process for customers who purchase vehicles from us. The registration fee is included in the vehicle price. For customers importing their own vehicles, we offer a full registration assistance service for a flat fee of EUR 150.
+
+    [4] Vehicle-Import-And-Registration-Process.txt  distance=1.0488
+        . Before purchasing any vehicle for import, our team conducts a thorough remote inspection using high-resolution photographs, detailed condition reports, and vehicle history checks through services such as Carfax (USA), AutoDNA, and national registration databases.
+
+    [5] Vehicle-Delivery-And-Shipping-Options.txt  distance=1.1294
+        International deliveries require the customer to handle vehicle registration in their home country. AutoGroup Motors provides all necessary export documentation, including the original vehicle title, purchase invoice, and any customs-related paperwork. We can also recommend registration agents in Latvia and Estonia if needed.
+
+----------------------------------------------------------------------
+  Q14/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How much does front brake pad replacement cost?
+
+  Expected answer:
+    Front brake pad replacement costs EUR 89-EUR 149 depending on the vehicle. Rear brake pads cost EUR 79-EUR 139. Brake disc replacement is EUR 159-EUR 249. Brake fluid flush is EUR 49. All prices include 21% VAT. Service work carries a 6-month or 10,000 km warranty on parts and labor.
+
+  Actual answer:
+    Front brake pad replacement costs between EUR 89 and EUR 149, depending on the vehicle make.
+
+  Sources expected: ['Service-And-Maintenance-Price-List.txt']
+  Sources actual:   ['Service-And-Maintenance-Price-List.txt', 'Warranty-And-After-Sales-Policy.txt']
+
+  Retrieved chunks (5):
+    [1] Service-And-Maintenance-Price-List.txt  distance=0.7195
+        Brake Service:
+        - Front brake pad replacement: EUR 89 to EUR 149 (depending on vehicle make)
+        - Rear brake pad replacement: EUR 79 to EUR 139
+        - Brake disc replacement (per axle): EUR 159 to EUR 249
+        - Brake fluid flush: EUR 49
+
+    [2] Warranty-And-After-Sales-Policy.txt  distance=1.2679
+        - Gold Plan: Comprehensive bumper-to-bumper coverage excluding wear-and-tear items (brake pads, tires, wiper blades) for up to 24 months or 40,000 km. Cost: EUR 899.
+
+    [3] Service-And-Maintenance-Price-List.txt  distance=1.3044
+        Major Service (recommended every 60,000 km or 48 months):
+        Includes everything in Full Service plus timing belt or chain inspection, coolant system flush and replacement, transmission fluid replacement, power steering fluid replacement, and suspension component inspection.
+        Price: EUR 349 to EUR 599 (varies significantly by vehicle model and engine type)
+        
+        3. Diagnostic Services
+
+    [4] Service-And-Maintenance-Price-List.txt  distance=1.3142
+        3. Diagnostic Services
+        
+        OBD-II Diagnostic Scan: EUR 29 (fee waived if repair is performed at our service center)
+        Advanced Diagnostic (including electrical system, ABS, airbag modules): EUR 59
+        Pre-Purchase Inspection (comprehensive 150-point check for buyers): EUR 89
+        Emissions Test Preparation and Check: EUR 39
+
+    [5] Service-And-Maintenance-Price-List.txt  distance=1.3162
+        7. Additional Information
+        All prices include VAT at 21%. Parts pricing may vary depending on vehicle make, model, and year. OEM and quality aftermarket parts are used for all repairs. Customers receive a detailed written estimate before any work begins. All service work carries a 6-month or 10,000 km warranty on parts and labor.
+
+----------------------------------------------------------------------
+  Q15/20 (CUSTOMER) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What happens if I discover a defect after buying a vehicle?
+
+  Expected answer:
+    If a defect is discovered within 6 months that existed at time of sale, the burden of proof lies with AutoGroup Motors to show it wasn't pre-existing. Options include free repair, replacement vehicle, partial refund, or full refund. Inspection is scheduled within 5 business days. Disputes can be escalated to internal review (5 business days), Lithuanian Consumer Rights Authority, EU ODR platform, or court.
+
+  Actual answer:
+    If you discover a defect after buying a vehicle, you should contact AutoGroup Motors immediately and provide a detailed description of the issue along with any supporting evidence, such as photographs, mechanic reports, or diagnostic data. 
+
+If the defect is found within the first 6 months of purchase and existed at the time of sale, AutoGroup Motors must prove that the defect was not present at the time of delivery. Upon receiving your defect claim, they will:
+
+a) Schedule an inspection at their service center within 5 business days.  
+b) If the defect is confirmed and was pre-existing, they will offer you one of the following resolutions:  
+   - Free repair of the defect at their service center  
+   - A replacement vehicle of equivalent value and specification (subject to availability)  
+
+Additionally, after the vehicle is returned, it will be inspected for any new damage, and you will have the opportunity to discuss your experience, ask questions, and explore financing or trade-in options if you are interested in proceeding with a purchase.
+
+  Sources expected: ['Returns-Refunds-And-Dispute-Resolution.txt']
+  Sources actual:   ['Test-Drive-Policy-And-Procedure.txt', 'Returns-Refunds-And-Dispute-Resolution.txt']
+
+  Retrieved chunks (5):
+    [1] Returns-Refunds-And-Dispute-Resolution.txt  distance=0.6947
+        . Customers who believe they have received a vehicle with a pre-existing defect should contact us immediately and provide a detailed description of the issue along with any supporting evidence (photographs, mechanic reports, diagnostic data).
+
+    [2] Returns-Refunds-And-Dispute-Resolution.txt  distance=0.6970
+        If a defect is discovered within the first 6 months of purchase that existed at the time of sale (as defined by Lithuanian Civil Code Article 6.363), the burden of proof lies with AutoGroup Motors to demonstrate that the defect was not present at the time of delivery
+
+    [3] Returns-Refunds-And-Dispute-Resolution.txt  distance=0.7059
+        Upon receiving a defect claim, we will:
+        a) Schedule an inspection at our service center within 5 business days
+        b) If the defect is confirmed and was pre-existing, offer the customer one of the following resolutions:
+           - Free repair of the defect at our service center
+           - A replacement vehicle of equivalent value and specification (subject to availability)
+
+    [4] Returns-Refunds-And-Dispute-Resolution.txt  distance=0.7693
+        4. Defective Vehicle Claims
+
+    [5] Test-Drive-Policy-And-Procedure.txt  distance=0.8074
+        After the drive:
+        - The vehicle is inspected upon return for any new damage.
+        - The customer is invited to discuss their experience, ask questions, and explore financing or trade-in options if interested in proceeding with a purchase.
+
+----------------------------------------------------------------------
+  Q16/20 [FAQ] (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the salary range for a sales consultant and how does commission work?
+
+  Expected answer:
+    Sales Consultant base salary is EUR 1,600-2,200 gross per month. Commission is 1.5% of vehicle gross profit at target margin and 0.75% below target. Add-on commission is 5%. Monthly volume bonus of EUR 200 for every 5 vehicles sold beyond the 8-vehicle monthly target. Annual bonus up to 1.5 months' salary if targets exceeded.
+
+  Actual answer:
+    Salary bands vary by role. Examples: General Manager EUR 4,500-6,000/mo, Sales Consultant EUR 1,600-2,200/mo + commission, Senior Mechanic EUR 1,800-2,400/mo, Accountant EUR 1,800-2,400/mo. Sales commission: 1.5% of vehicle gross profit at target margin. Annual bonus: up to 1.5 months' salary. Salary reviews happen in March. Contact: hr@autogroupmotors.lt.
+
+  Sources expected: ['Employee-Compensation-And-Pay-Structure.txt']
+  Sources actual:   ['Employee-Compensation-And-Pay-Structure.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q17/20 (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What does the private health insurance cover?
+
+  Expected answer:
+    Private insurance through Compensa Vienna covers: outpatient care EUR 2,000/year, dental EUR 500/year, inpatient EUR 15,000/year, medications 80% reimbursement up to EUR 400/year, mental health 12 sessions/year fully covered, optical EUR 150/year. Family members can be added for EUR 45/person/month. Eligible after probation period for full-time employees.
+
+  Actual answer:
+    The private health insurance covers the following:
+
+1. Outpatient care: GP and specialist consultations, diagnostics, laboratory tests — up to EUR 2,000 per year.
+2. Dental care: Preventive check-ups, fillings, extractions — up to EUR 500 per year.
+3. Inpatient care: Hospital stays, surgeries, rehabilitation — up to EUR 15,000 per year.
+4. Prescription medications: 80% reimbursement on prescribed medicines, up to EUR 400 per year.
+5. Mental health: Up to 12 psychologist or psychotherapist sessions per year, fully covered.
+6. Optical care: Eye exams and EUR 150 allowance toward corrective lenses or contact lenses per year.
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt']
+  Sources actual:   ['Employee-Health-And-Benefits-Package.txt', 'Insurance-Options-And-Partners.txt']
+
+  Retrieved chunks (5):
+    [1] Employee-Health-And-Benefits-Package.txt  distance=0.9950
+        2. Health Insurance
+        
+        a. Private Health Insurance
+        AutoGroup Motors partners with Compensa Vienna Insurance Group to provide supplementary private health insurance for all eligible employees.
+        
+        Coverage includes:
+
+    [2] Employee-Health-And-Benefits-Package.txt  distance=1.1314
+        The employer covers 100% of the insurance premium for the employee. Family members (spouse and children under 18) may be added at a discounted group rate of EUR 45 per person per month, payable via salary deduction.
+
+    [3] Employee-Health-And-Benefits-Package.txt  distance=1.1832
+        - Outpatient care: GP and specialist consultations, diagnostics, laboratory tests — up to EUR 2,000 per year
+        - Dental care: Preventive check-ups, fillings, extractions — up to EUR 500 per year
+        - Inpatient care: Hospital stays, surgeries, rehabilitation — up to EUR 15,000 per year
+        - Prescription medications: 80% reimbursement on prescribed medicines, up to EUR 400 per year
+
+    [4] Insurance-Options-And-Partners.txt  distance=1.2340
+        3. Comprehensive Insurance: KASKO
+        KASKO insurance provides comprehensive coverage for your own vehicle, including damage from accidents (regardless of fault), theft, vandalism, natural disasters, fire, glass breakage, and animal collisions. KASKO is not legally required but is highly recommended, especially for financed or leased vehicles where lenders typically require it.
+
+    [5] Employee-Health-And-Benefits-Package.txt  distance=1.2392
+        - Mental health: Up to 12 psychologist or psychotherapist sessions per year, fully covered
+        - Optical care: Eye exams and EUR 150 allowance toward corrective lenses or contact lenses per year
+
+----------------------------------------------------------------------
+  Q18/20 (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    How many annual leave days do employees get?
+
+  Expected answer:
+    Standard annual leave is 20 working days for full-time employees. Employees with 5+ years get 25 days, and 10+ years get 28 days. Maximum 5 days can be carried over to the next year. Sick leave is 80% of salary for the first 2 days (paid by employer), then 62.06% from SODRA.
+
+  Actual answer:
+    Employees receive the following annual leave days based on their length of service:
+
+1. Standard: 20 working days per calendar year for full-time employees.
+2. After 5 years of service: 25 working days per calendar year.
+3. After 10 years of service: 28 working days per calendar year.
+
+Unused annual leave may be carried over to the following year, up to a maximum of 5 days. Remaining unused days are forfeited.
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt']
+  Sources actual:   ['Employee-Handbook-And-Code-Of-Conduct.txt', 'Employee-Health-And-Benefits-Package.txt']
+
+  Retrieved chunks (5):
+    [1] Employee-Health-And-Benefits-Package.txt  distance=0.6025
+        4. Leave Entitlements
+        
+        a. Annual Leave
+        - Standard: 20 working days per calendar year (full-time employees)
+        - After 5 years of service: 25 working days per calendar year
+        - After 10 years of service: 28 working days per calendar year
+        
+        Unused annual leave may be carried over to the following year, up to a maximum of 5 days. Remaining unused days are forfeited.
+
+    [2] Employee-Handbook-And-Code-Of-Conduct.txt  distance=0.8010
+        Full-time employees are entitled to 20 working days of annual leave, accrued monthly. Sick leave is granted in accordance with Lithuanian labor law, with the first two days paid by the employer and subsequent days covered by Sodra (the State Social Insurance Fund). Employees are also entitled to public holidays as defined by Lithuanian law
+
+    [3] Employee-Health-And-Benefits-Package.txt  distance=0.8255
+        d. Additional Leave
+        - Bereavement leave: 3 paid days for the death of an immediate family member
+        - Marriage leave: 3 paid days
+        - Study leave: Up to 5 unpaid days per year for job-related education (with manager approval)
+        - Volunteering leave: 1 paid day per year for approved community service activities
+        
+        5. Retirement and Savings
+
+    [4] Employee-Health-And-Benefits-Package.txt  distance=1.0062
+        c. Parental Leave
+        - Maternity leave: 126 calendar days (70 days before and 56 days after birth), paid by SODRA
+        - Paternity leave: 30 calendar days, paid by SODRA
+        - Childcare leave: Up to 2 years, paid by SODRA at decreasing rates
+        - AutoGroup Motors guarantees the employee's position or an equivalent role upon return
+
+    [5] Employee-Handbook-And-Code-Of-Conduct.txt  distance=1.0972
+        8. Leave and Benefits
+
+----------------------------------------------------------------------
+  Q19/20 [FAQ] (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What is the overtime policy and pay rates?
+
+  Expected answer:
+    Overtime must be pre-approved by your manager. Rates: weekday overtime 1.5x hourly rate, Saturday 1.5x, Sunday and public holidays 2.0x. Maximum 8 hours overtime per week and 180 hours per calendar year per Lithuanian labour law.
+
+  Actual answer:
+    Overtime must be pre-approved by your manager. Rates: weekday overtime 1.5x hourly rate, Saturday 1.5x, Sunday and public holidays 2.0x. Maximum 8 hours overtime per week and 180 hours per calendar year per Lithuanian labour law.
+
+  Sources expected: ['Employee-Compensation-And-Pay-Structure.txt']
+  Sources actual:   ['Employee-Compensation-And-Pay-Structure.txt']
+
+  Retrieved chunks: (FAQ — no retrieval performed)
+
+----------------------------------------------------------------------
+  Q20/20 (EMPLOYEE) | Retrieval: 100%
+----------------------------------------------------------------------
+
+  Question:
+    What employee discounts and benefits are available for vehicle purchases?
+
+  Expected answer:
+    Employees get a 3% discount off listed vehicle price (once per year) per the Health and Benefits package. The Employee Handbook also mentions a 10% vehicle purchase discount. Additional benefits include EUR 100/month fuel allowance (if approved), EUR 500/year professional development budget, and EUR 50/month voluntary pension match through SEB bank.
+
+  Actual answer:
+    The employee discounts and benefits available for vehicle purchases include:
+
+1. A 3% discount off the listed price on any vehicle in stock, available once per calendar year.
+2. A vehicle purchase discount of 10% for employees.
+3. Access to the employee wellness program.
+4. Up to EUR 500 per year for job-related courses, certifications, or conferences (with HR approval).
+5. Quarterly team-building events and an annual company celebration funded by the company.
+6. For Gold tier employees (after the 3rd purchase or EUR 7,000+ in cumulative service spending): 
+   - 20% discount on labor and 10% discount on parts.
+   - One free Full Service package per year (valued at EUR 199).
+   - Priority access to limited-edition or high-demand vehicles.
+   - Dedicated account manager for all sales and service inquiries.
+   - Complimentary annual vehicle detailing package (valued at EUR 99).
+
+Company vehicles are available for Sales Managers and above, subject to the company car policy, and a fuel allowance of EUR 100 per month is provided for employees who use personal vehicles for business purposes (requires approval).
+
+  Sources expected: ['Employee-Health-And-Benefits-Package.txt', 'Employee-Handbook-And-Code-Of-Conduct.txt']
+  Sources actual:   ['Employee-Handbook-And-Code-Of-Conduct.txt', 'Customer-Loyalty-And-Referral-Program.txt', 'Employee-Health-And-Benefits-Package.txt', 'Warranty-And-After-Sales-Policy.txt']
+
+  Retrieved chunks (5):
+    [1] Employee-Handbook-And-Code-Of-Conduct.txt  distance=0.6178
+        . Additional benefits include a company phone, a vehicle purchase discount of 10%, and access to the employee wellness program.
+
+    [2] Employee-Health-And-Benefits-Package.txt  distance=0.7443
+        - Employee vehicle purchase discount: 3% discount off listed price on any vehicle in stock, available once per calendar year
+        - Professional development: Up to EUR 500 per year for job-related courses, certifications, or conferences (with HR approval)
+        - Team events: Quarterly team-building events and an annual company celebration funded by the company
+
+    [3] Customer-Loyalty-And-Referral-Program.txt  distance=0.9050
+        Gold (3rd purchase or EUR 7,000+ in cumulative service spending):
+        - All Silver benefits
+        - 20% discount on labor and 10% discount on parts
+        - One free Full Service package per year (valued at EUR 199)
+        - Priority access to limited-edition or high-demand vehicles
+        - Dedicated account manager for all sales and service inquiries
+        - Complimentary annual vehicle detailing package (valued at EUR 99)
+
+    [4] Employee-Health-And-Benefits-Package.txt  distance=0.9496
+        - Company vehicle: Available for Sales Managers and above, subject to the company car policy
+        - Fuel allowance: EUR 100 per month for employees who use personal vehicles for business purposes (requires approval)
+        - Mobile phone: Company phone and plan provided for all sales, management, and logistics roles
+
+    [5] Warranty-And-After-Sales-Policy.txt  distance=0.9623
+        6. After-Sales Service
+        We offer scheduled maintenance packages at competitive rates. Customers who purchased a vehicle from us receive a 15% discount on labor for all service work performed at our facility during the first 12 months of ownership. We also provide complimentary multi-point inspections at 6-month intervals for the first year.
+
+======================================================================
+  RESULTS SUMMARY
+======================================================================
+  Total questions:         20
+  Avg retrieval precision: 100.0%
+  Perfect retrieval:       20/20
+  FAQ instant answers:     7/20
+======================================================================

@@ -2,17 +2,17 @@
 ingest.py — Document ingestion pipeline for the RAG chatbot.
 
 Reads .txt, .md, and .pdf files from ./documents/, splits them into chunks,
-generates embeddings with all-MiniLM-L6-v2, and stores everything in ChromaDB.
+generates embeddings via the OpenAI embedding API, and stores everything in ChromaDB.
 """
 
 import os
 import sys
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
 
 from config import (
+    ATOMIC_FILES,
     CHROMA_DB_DIR,
     CHUNK_OVERLAP,
     CHUNK_SIZE,
@@ -22,6 +22,7 @@ from config import (
     EMBEDDING_MODEL,
     EMPLOYEE_ONLY_FILES,
 )
+from embeddings import embed_texts
 
 
 def load_documents(documents_dir: str) -> list[dict]:
@@ -55,7 +56,7 @@ def load_documents(documents_dir: str) -> list[dict]:
 
 
 def chunk_documents(documents: list[dict]) -> list[dict]:
-    """Split documents into chunks using RecursiveCharacterTextSplitter."""
+    """Split documents into chunks. Atomic files are stored as one chunk."""
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP,
@@ -64,6 +65,15 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
 
     chunks = []
     for doc in documents:
+        if doc["filename"] in ATOMIC_FILES:
+            # Keep the whole document as a single chunk so list-everything questions
+            # (e.g. "what SUVs do you have?") see the full inventory at once.
+            chunks.append({
+                "text": doc["content"],
+                "metadata": {"source": doc["filename"], "chunk_index": 0},
+            })
+            continue
+
         splits = splitter.split_text(doc["content"])
         for i, text in enumerate(splits):
             chunks.append({
@@ -77,7 +87,7 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     return chunks
 
 
-def store_in_chromadb(chunks: list[dict], model: SentenceTransformer, collection_name: str) -> None:
+def store_in_chromadb(chunks: list[dict], collection_name: str) -> None:
     """Generate embeddings and store chunks in ChromaDB. Clears existing data first."""
     client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
 
@@ -90,8 +100,8 @@ def store_in_chromadb(chunks: list[dict], model: SentenceTransformer, collection
 
     # Generate embeddings for all chunks at once
     texts = [chunk["text"] for chunk in chunks]
-    print(f"Generating embeddings for {len(texts)} chunks...")
-    embeddings = model.encode(texts, show_progress_bar=True).tolist()
+    print(f"Generating embeddings for {len(texts)} chunks via OpenAI ({EMBEDDING_MODEL})...")
+    embeddings = embed_texts(texts)
 
     # Prepare data for ChromaDB
     ids = [f"chunk_{i}" for i in range(len(chunks))]
@@ -130,16 +140,14 @@ def main():
     print(f"\nCustomer chunks: {len(customer_chunks)} (chunk_size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})")
     print(f"Employee chunks: {len(employee_chunks)}")
 
-    # Step 4: Load the embedding model
-    print(f"\nLoading embedding model: {EMBEDDING_MODEL}")
-    model = SentenceTransformer(EMBEDDING_MODEL)
+    # Step 4: Store both collections in ChromaDB
+    print(f"\nUsing OpenAI embedding model: {EMBEDDING_MODEL}")
 
-    # Step 5: Store both collections in ChromaDB
     print(f"\n--- Ingesting customer collection ---")
-    store_in_chromadb(customer_chunks, model, COLLECTION_CUSTOMER)
+    store_in_chromadb(customer_chunks, COLLECTION_CUSTOMER)
 
     print(f"\n--- Ingesting employee collection ---")
-    store_in_chromadb(employee_chunks, model, COLLECTION_EMPLOYEE)
+    store_in_chromadb(employee_chunks, COLLECTION_EMPLOYEE)
 
     # Summary
     print("\n--- Ingestion Complete ---")

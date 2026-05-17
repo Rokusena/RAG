@@ -13,14 +13,12 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from sentence_transformers import SentenceTransformer
 
 from config import (
     CHROMA_DB_DIR,
     COLLECTION_CUSTOMER,
     COLLECTION_EMPLOYEE,
     DOCUMENTS_DIR,
-    EMBEDDING_MODEL,
 )
 from query import answer_question
 
@@ -48,7 +46,7 @@ _state: dict = {}
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Load the embedding model and ChromaDB collection once at startup."""
+    """Load ChromaDB collections once at startup. Embeddings are computed on-demand via OpenAI."""
     if not os.path.exists(CHROMA_DB_DIR):
         raise RuntimeError(
             "Vector store not found. Run 'python ingest.py' first."
@@ -63,10 +61,7 @@ async def lifespan(app: FastAPI):
             "Collections not found. Run 'python ingest.py' first."
         )
 
-    model = SentenceTransformer(EMBEDDING_MODEL)
-
     _state["collections"] = {"customer": customer_col, "employee": employee_col}
-    _state["model"] = model
     print(f"RAG API ready — customer: {customer_col.count()} chunks, employee: {employee_col.count()} chunks")
     yield
     _state.clear()
@@ -98,13 +93,12 @@ async def ask(request: AskRequest):
         raise HTTPException(status_code=400, detail="Question cannot be empty.")
 
     collections = _state["collections"]
-    model = _state["model"]
     mode = request.mode if request.mode in ("customer", "employee") else "customer"
 
     # Convert history to dicts for query module
     history = [entry.model_dump() for entry in request.history]
 
-    result = answer_question(question, collections, model, mode=mode, history=history)
+    result = answer_question(question, collections, mode=mode, history=history)
 
     # Surface LLM errors as 503
     if result["answer"].startswith("Error:"):

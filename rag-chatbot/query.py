@@ -10,13 +10,11 @@ import sys
 import chromadb
 import requests
 from openai import OpenAI
-from sentence_transformers import SentenceTransformer
 
 from config import (
     CHROMA_DB_DIR,
     COLLECTION_CUSTOMER,
     COLLECTION_EMPLOYEE,
-    EMBEDDING_MODEL,
     LLM_PROVIDER,
     OLLAMA_MODEL,
     OLLAMA_URL,
@@ -28,6 +26,7 @@ from config import (
     TOP_K,
     active_model_name,
 )
+from embeddings import embed_query
 
 
 # --- FAQ: instant answers for common questions ---
@@ -99,8 +98,8 @@ def _match_faq(question: str, mode: str) -> dict | None:
     return None
 
 
-def get_retriever():
-    """Initialize ChromaDB client, both collections, and embedding model."""
+def get_retriever() -> dict:
+    """Initialize ChromaDB client and return both collections."""
     if not os.path.exists(CHROMA_DB_DIR):
         print("Error: Vector store not found. Run 'python ingest.py' first.")
         sys.exit(1)
@@ -114,26 +113,33 @@ def get_retriever():
         print("Error: Collections not found. Run 'python ingest.py' first.")
         sys.exit(1)
 
-    model = SentenceTransformer(EMBEDDING_MODEL)
-    return collections, model
+    return collections
 
 
-def retrieve_chunks(question: str, collection, model: SentenceTransformer) -> tuple[str, list[str]]:
-    """Embed the question and retrieve the top-K most similar chunks."""
-    query_embedding = model.encode([question]).tolist()
+def retrieve_chunks(question: str, collection) -> tuple[str, list[str], list[dict]]:
+    """Embed the question and retrieve the top-K most similar chunks.
+
+    Returns (joined_context, unique_sources, ranked_chunks). Each ranked chunk is
+    {"source", "text", "distance"} in rank order — useful for eval diagnostics.
+    """
+    query_embedding = [embed_query(question)]
 
     results = collection.query(
         query_embeddings=query_embedding,
         n_results=TOP_K,
     )
 
-    # Extract chunk texts and source filenames
     documents = results["documents"][0]
     metadatas = results["metadatas"][0]
-    sources = list({m["source"] for m in metadatas})
+    distances = results.get("distances", [[None] * len(documents)])[0]
 
+    ranked_chunks = [
+        {"source": m["source"], "text": doc, "distance": dist}
+        for doc, m, dist in zip(documents, metadatas, distances)
+    ]
+    sources = list({m["source"] for m in metadatas})
     context = "\n\n".join(documents)
-    return context, sources
+    return context, sources, ranked_chunks
 
 
 def ask_ollama(messages: list[dict]) -> str:
@@ -185,7 +191,6 @@ def ask_llm(messages: list[dict]) -> str:
 def answer_question(
     question: str,
     collections: dict,
-    model: SentenceTransformer,
     mode: str = "customer",
     history: list[dict] | None = None,
 ) -> dict:
@@ -193,10 +198,10 @@ def answer_question(
     # Check FAQ first for instant answers
     faq_match = _match_faq(question, mode)
     if faq_match:
-        return {"answer": faq_match["answer"], "sources": faq_match["sources"]}
+        return {"answer": faq_match["answer"], "sources": faq_match["sources"], "chunks": []}
 
     collection = collections.get(mode, collections["customer"])
-    context, sources = retrieve_chunks(question, collection, model)
+    context, sources, chunks = retrieve_chunks(question, collection)
 
     # Select system prompt based on provider
     if LLM_PROVIDER == "openai":
@@ -221,12 +226,12 @@ def answer_question(
     messages.append({"role": "user", "content": user_msg})
 
     answer = ask_llm(messages)
-    return {"answer": answer, "sources": sources}
+    return {"answer": answer, "sources": sources, "chunks": chunks}
 
 
 def main():
     print("Loading RAG chatbot...")
-    collections, model = get_retriever()
+    collections = get_retriever()
     print(f"Ready! Using model '{active_model_name()}' via {LLM_PROVIDER}.")
 
     mode = input("Select mode (customer/employee) [customer]: ").strip().lower()
@@ -250,7 +255,7 @@ def main():
             print("Goodbye!")
             break
 
-        result = answer_question(question, collections, model, mode=mode, history=history)
+        result = answer_question(question, collections, mode=mode, history=history)
         history.append({"question": question, "answer": result["answer"]})
         print(f"\nAssistant: {result['answer']}")
         print(f"Sources: {', '.join(result['sources'])}\n")

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "rag-implementation": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "skillPath": "plugins/llm-application-dev/skills/rag-implementation/SKILL.md",
+      "computedHash": "0a68c672384c5c6aa7acb286c18f8eb9dce53a058062a8951ac0adca4d01d4ea"
+    }
+  }
+}

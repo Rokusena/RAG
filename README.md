@@ -55,15 +55,15 @@ documents/  ──→  ingest.py  ──→  ChromaDB (vector store)
 (.txt .md .pdf)    │                     │
                    │ chunk + embed       │ similarity search
                    ▼                     ▼
-             Sentence Transformer    Top-K chunks
-             (all-MiniLM-L6-v2)         │
+              OpenAI Embeddings      Top-K chunks
+           (text-embedding-3-small)     │
                                         ▼
 User question ──→ FAQ check ──→ LLM (Ollama / OpenAI) ──→ Answer + Sources
                   (instant)        │
                                    └─ system prompt + context + history
 ```
 
-**Ingestion:** Documents are split into overlapping chunks, embedded with `all-MiniLM-L6-v2`, and stored in ChromaDB. Two collections are maintained — customer (public) and employee (all docs).
+**Ingestion:** Documents are split into overlapping chunks, embedded via OpenAI's `text-embedding-3-small`, and stored in ChromaDB. Two collections are maintained — customer (public) and employee (all docs).
 
 **Query:** Questions are checked against FAQ patterns first. On miss, the question is embedded and matched against stored chunks via cosine similarity. The top-K chunks are passed as context to the LLM, which generates a grounded answer.
 
@@ -77,7 +77,7 @@ All settings live in `rag-chatbot/.env` and are loaded by `config.py`.
 | `OLLAMA_MODEL` | `qwen3.5:9B` | Ollama model name |
 | `OPENAI_API_KEY` | — | Required when `LLM_PROVIDER=openai` |
 | `OPENAI_MODEL` | `gpt-4o-mini` | OpenAI model |
-| `EMBEDDING_MODEL` | `all-MiniLM-L6-v2` | Sentence transformer for embeddings |
+| `EMBEDDING_MODEL` | `text-embedding-3-small` | OpenAI embedding model |
 | `TOP_K` | `5` | Chunks retrieved per query |
 | `CHUNK_SIZE` | `400` | Characters per chunk |
 | `CHUNK_OVERLAP` | `60` | Overlap between chunks |

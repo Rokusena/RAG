@@ -180,8 +180,8 @@ def main():
     print(f"  Model: {model_name} ({LLM_PROVIDER})")
     print("=" * 70)
 
-    print("\nLoading models and collections...")
-    collections, model = get_retriever()
+    print("\nLoading collections...")
+    collections = get_retriever()
 
     total = len(EVAL_DATASET)
     retrieval_scores = []
@@ -203,9 +203,10 @@ def main():
             faq_hits += 1
 
         # Get actual answer
-        result = answer_question(question, collections, model, mode=mode)
+        result = answer_question(question, collections, mode=mode)
         actual_answer = result["answer"]
         actual_sources = result["sources"]
+        actual_chunks = result.get("chunks", [])
 
         # Retrieval precision
         precision = evaluate_retrieval_precision(actual_sources, expected_src)
@@ -224,6 +225,7 @@ def main():
             "actual_answer": actual_answer,
             "expected_sources": expected_src,
             "actual_sources": actual_sources,
+            "chunks": actual_chunks,
             "retrieval": precision,
         })
 
@@ -264,6 +266,19 @@ def main():
             f.write(f"    {r['actual_answer']}\n\n")
             f.write(f"  Sources expected: {r['expected_sources']}\n")
             f.write(f"  Sources actual:   {r['actual_sources']}\n\n")
+
+            if r["chunks"]:
+                f.write(f"  Retrieved chunks ({len(r['chunks'])}):\n")
+                for rank, c in enumerate(r["chunks"], 1):
+                    dist = f"distance={c['distance']:.4f}" if c.get("distance") is not None else ""
+                    f.write(f"    [{rank}] {c['source']}  {dist}\n")
+                    # Indent every line of the chunk text for readability
+                    chunk_text = c["text"].strip()
+                    for line in chunk_text.splitlines():
+                        f.write(f"        {line}\n")
+                    f.write("\n")
+            elif r["is_faq"]:
+                f.write(f"  Retrieved chunks: (FAQ — no retrieval performed)\n\n")
 
         f.write(f"{'=' * 70}\n")
         f.write(f"  RESULTS SUMMARY\n")
